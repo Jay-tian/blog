@@ -1,5 +1,5 @@
 const BaseController = require('./BaseController');
-const toolkit = require('../../common/toolkit.js');
+const toolkit = require('koa-symphony/src/common/toolkit.js');
 
 class DefaultController extends BaseController {
   constructor(){

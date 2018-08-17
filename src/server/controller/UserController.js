@@ -1,6 +1,6 @@
 const BaseController = require('./BaseController');
 const crypto = require('crypto');
-const toolkit = require('../../common/toolkit.js');
+const toolkit = require('koa-symphony/src/common/toolkit.js');
 
 class UserController extends BaseController {
   constructor(){
