@@ -1,4 +1,4 @@
-const BaseDao = require('../BaseDao.js');
+const BaseDao = require('koa-symphony/src/dao/BaseDao.js');
 const Sequelize = require('sequelize');
 
 class UserDao extends BaseDao{

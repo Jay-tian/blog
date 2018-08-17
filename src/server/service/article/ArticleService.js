@@ -1,4 +1,5 @@
-const BaseService = require('../BaseService.js');
+const BaseService = require('koa-symphony/src/service/BaseService.js');
+
 class ArticleService extends BaseService{
   constructor(){
     super();

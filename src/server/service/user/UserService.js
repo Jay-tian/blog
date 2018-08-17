@@ -1,6 +1,6 @@
-const BaseService = require('../BaseService.js');
+const BaseService = require('koa-symphony/src/service/BaseService.js');
+const toolkit = require('koa-symphony/toolkit/index.js');
 const crypto = require('crypto');
-const toolkit = require('koa-symphony/src/common/toolkit.js');
 
 class UserService extends BaseService{
   constructor(){
