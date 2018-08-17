@@ -10,13 +10,17 @@
   <div class="article-create container" id="article-create">
     <form method="POST" action="{{ url('createArticle') }}" id="article" data-image-save="{{ url('imageUpload') }}" enctype="multipart/form-data">
         <div class="form-group">
-          <input name="title" id="title" class="title form-control" autocomplete="off" placeholder="标题" value="">
+          <input name="title" id="title" class="title form-control" autocomplete="off" placeholder="标题" value="" maxlength='25'>
+        </div>
+        <div class="form-group">
+          <input name="subTitle" id="subTitle" class="form-control" autocomplete="off" placeholder="副标题" value="" maxlength='50'>
         </div>
         <div class="form-group">
           <div id="content">
               <textarea class="editormd" name="contentMd" style="display:none;"></textarea>
           </div>
         </div>
+
         <input name="id" type="hidden" id="article-id" value="">
         <button type="submit" >
             提交

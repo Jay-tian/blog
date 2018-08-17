@@ -9,15 +9,6 @@ editormd({
   imageUploadURL: $article.data('imageSave'),
 });
 
-// let article = new Article($form);
-
-// document.onkeydown=function(e)   {
-//   if (e.keyCode == 83 && (navigator.platform.match('Mac') ? e.metaKey : e.ctrlKey)) {
-//     $('#article').submit();
-//     return false;
-//   }
-// };
-
 $article.validate({
   invalidHandler: function(data, validate) {
     let errorTip = validate.errorMap[Object.keys(validate.errorMap)[0]];
