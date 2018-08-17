@@ -1,0 +1,50 @@
+{% extends 'layout.twig' %}
+{% do script(['dist/article/index.js']) %}
+{% do css(['dist/article/index.css']) %}
+{% import "macro.html.twig" as macroTool %}
+{% block title %}
+    标题-首页
+{% endblock %}
+
+{% block body %}
+  {% include 'default/header.html.twig' %}
+  <div class="article-main main container">
+    <div class="title">
+        <h1>
+            {{ article.title }}
+        </h1>
+        <div class="text-sm text-grey">
+            <span class="mrm">2017年8月19日 19:1:2</span> <span>阅读量： 10222</span>
+        </div>
+        <div class="author clearfix">
+            <img class="avatar xs" src="http://sca1dk-sb-qn.qiqiuyun.net/files/user/2017/05-19/11234621db0f968628.jpeg" class="avatar_pic">
+            <div class="author-list transition">
+                <div class="mbs">
+                    <span>田胜杰</span>
+                    <a class="btn btn-sm mls">关注</a>
+                </div>
+                <div class="number clearfix text-xs">
+                    <dl>
+                        <dt class="text-grey">作品</dt>
+                        <dd >54</dd>
+                    </dl>
+                    <dl>
+                        <dt class="text-grey">关注</dt>
+                        <dd>54</dd>
+                    </dl>
+                    <dl>
+                        <dt class="text-grey">喜欢</dt>
+                        <dd>54</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        {{ article.content|raw }}
+    </div>  
+    {# <div>
+        点赞，喜欢，评论，
+    </div>      #}
+  </div>
+{% endblock %}

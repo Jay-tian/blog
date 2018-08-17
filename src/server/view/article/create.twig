@@ -1,0 +1,26 @@
+{% extends 'layout.twig' %}
+{% set scripts = ['/dist/js/libs/jquery-validation.js', '/dist/js/libs/editor.md/editormd.min.js', '/dist/js/article/create/index.js'] %} 
+{% set styles = ['/dist/js/libs/editor.md/css/editormd.min.css', '/dist/css/article-create.css'] %}
+
+{% block title %}
+  create a blog
+{% endblock %}
+
+{% block main %}
+  <div class="article-create container" id="article-create">
+    <form method="POST" action="{{ url('createArticle') }}" id="article" data-image-save="{{ url('imageUpload') }}" enctype="multipart/form-data">
+        <div class="form-group">
+          <input name="title" id="title" class="title form-control" autocomplete="off" placeholder="标题" value="">
+        </div>
+        <div class="form-group">
+          <div id="content">
+              <textarea class="editormd" name="contentMd" style="display:none;"></textarea>
+          </div>
+        </div>
+        <input name="id" type="hidden" id="article-id" value="">
+        <button type="submit" >
+            提交
+        </button>
+    </form>
+  </div>
+{% endblock %}

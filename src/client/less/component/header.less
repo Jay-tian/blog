@@ -1,0 +1,70 @@
+.header{
+  padding: 0 30px;
+  height: 50px;
+  font-size: 16px;
+  line-height: 50px;
+  margin-bottom: 30px;
+  border:1px solid #f0f0f0;
+
+  h1{
+    float: left;
+    margin: 0 0 5px;
+
+    .red{
+      color: #ea4236
+    }
+    .yellow{
+      color: #fbbe07
+    }
+    .blue{
+      color: #4285f6
+    }
+  }
+  ul{
+    float: left;
+    margin-left: 30px;
+    margin-bottom: 0;
+    list-style: none;
+    line-height: 50px;
+    
+    li{
+      float: left;
+    }
+  }
+
+  .profile {
+    text-align: center;
+    line-height: 40px;
+    margin-top: 4px;
+    font-size: 26px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    color: #fff;
+    float: right;
+    background: @primary-color;
+    cursor: pointer;
+    position: relative;
+
+    .dropdown-menu{
+      margin-left: 0;
+      min-width: 80px;
+      margin-top: 4px;
+      border: 1px solid #f0f0f0;
+
+      li {
+        float: none;
+        text-align: center;
+
+        a {
+          padding: 10px 0;
+          color: @primary-color;
+        }
+      }
+    }
+
+    &.login {
+      font-size: 16px;
+    }
+  }
+}

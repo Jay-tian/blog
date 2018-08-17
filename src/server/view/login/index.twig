@@ -1,0 +1,58 @@
+{% extends 'layout.twig' %}
+
+{% set title = "登录" %}
+{% set scripts = ['/dist/js/libs/jquery-validation.js', '/dist/js/login/index.js',] %} 
+{% set styles = ['/dist/css/login.css'] %} 
+
+{% block body %}
+  <div class="login">
+    <div id="particles-js" class="particles"></div>
+    <div class="login-main active">
+      <div class="login-title">
+        <h1 class="">
+          登录
+        </h1>
+        <span class="js-trans primary-color">
+          注册
+        </span>
+      </div>
+      <form action="{{ url('login') }}" method="post" class="form-horizontal" id="login">
+        <div class="control-group">
+          <div class="controls">
+            <input placeholder="用户名" class="form-control" name="nickname" type="text">
+          </div>
+        </div>
+        <div class="control-group mt2">
+          <div class="controls">
+            <input placeholder="密码"  class="form-control" type="password" name="password">
+          </div>
+        </div>
+        <button class="btn btn-primary btn-main mt2" type="submit">登陆</button>
+      </form>
+    </div>
+
+    <div class="login-main">
+      <div class="login-title">
+        <h1 class="">
+          注册
+        </h1>
+        <span class="js-trans primary-color">
+          登录
+        </span>
+      </div>
+      <form action="{{ url('register') }}" id="register" method="post" class="form-horizontal">
+        <div class="control-group">
+          <div class="controls">
+            <input placeholder="用户名" class="form-control" name="nickname" type="text">
+          </div>
+        </div>
+        <div class="control-group mt2">
+          <div class="controls">
+            <input placeholder="密码"  class="form-control" type="password" name="password">
+          </div>
+        </div>
+        <button class="btn btn-primary btn-main mt2" type="submit">注册</button>
+      </form>
+    </div>
+  </div>
+{% endblock %} 

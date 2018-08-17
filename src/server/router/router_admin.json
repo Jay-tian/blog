@@ -1,0 +1,9 @@
+{
+  "options": {
+    "profix": "/admin"
+  },
+  "index": {
+    "path": "/",
+    "controller": "AdminDefault"
+  }
+}

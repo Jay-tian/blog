@@ -1,0 +1,48 @@
+.particles {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -110px;
+  margin-left: -150px;
+  border: 8px solid rgba(81, 181, 224, 0.5);
+  background: rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  border-radius: 20px;
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.7s ease;
+  transform: rotateY(90deg);
+
+  &.active {
+    transform: rotateY(0deg);
+    z-index: 10;
+    opacity: 1;
+    transition-delay: 0.4s;
+  }
+
+  h1 {
+    font-size: 16px;
+    margin: 5px 0 15px;
+  }
+
+  .login-title {
+    position: relative;
+    height: 30px;
+
+    span {
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 16px;
+      height: 17px;
+      line-height: 17px;
+      cursor: pointer;
+    }
+  }
+}

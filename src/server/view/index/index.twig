@@ -1,0 +1,56 @@
+{% extends 'layout.twig' %}
+{% set scripts = ['/dist/js/index/index.js'] %}
+{% set styles = ['/dist/css/index.css'] %} 
+
+{% block main %}
+  <div class="main clearfix container">
+    <div class="col-md-9">
+      <ul class="article-list">
+        <li class="">
+          <div class="content">
+            <a class="title" target="_blank" href="">
+              浓浓粽香飘，我的端午情，多彩华夏画展
+            </a>
+            <div class="meta">
+              <a class="nickname" target="_blank" href="">
+                学无止境
+              </a>
+
+              <i class="iconfont icon-eye"></i> 4  
+              <i class="iconfont icon-like"></i> 5
+            </div>
+          </div>
+        </li>
+        {# {% for article in articles %}
+          <li class="">
+            <div class="content">
+              <a class="title" target="_blank" href="">
+                {{ article.dataValues.title }}
+              </a>
+              <p class="abstract">
+              </p>
+              <div class="meta">
+                <a class="nickname" target="_blank" href="">
+                  
+                </a>
+                  <a target="_blank" href="/p/cd7f429f4278#comments">
+                    <i class="iconfont ic-list-comments"></i> 0
+                  </a>      
+                <span>
+                  <i class="iconfont ic-list-like"></i> 0
+                </span>
+              </div>
+            </div>
+          </li>
+        {% endfor %} #}
+      </ul>      
+    </div>
+    <div class="col-md-3">
+      <ul class="apps">
+        <li>
+          算法扑克
+        </li>
+      </ul>
+    </div>
+  </div>
+{% endblock %} 

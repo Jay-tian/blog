@@ -1,0 +1,8 @@
+/node_modules
+yarn-error.log
+dev.lock
+public/.DS_Store
+.DS_Store
+/webpack-cache
+.sequelizerc
+/public/data

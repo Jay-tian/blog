@@ -1,0 +1,33 @@
+{
+  "options": {
+    "profix": ""
+  },
+  "index": {
+    "path": "/",
+    "controller": "Default"
+  },
+  "login": {
+    "path": "/login",
+    "controller": "User",
+    "methods": ["get", "post"]
+  },
+  "register": {
+    "path": "/register",
+    "controller": "User",
+    "methods": ["post"]
+  },
+  "logout": {
+    "path": "/logout",
+    "controller": "User"
+  },
+  "createArticle": {
+    "path": "/article/create",
+    "controller": "Article",
+    "methods": ["get", "post"]
+  },
+  "imageUpload": {
+    "path": "/image/uploader",
+    "controller": "System",
+    "methods": ["post"]
+  }
+}
