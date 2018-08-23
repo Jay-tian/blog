@@ -6,44 +6,30 @@
   <div class="main clearfix container">
     <div class="col-md-9">
       <ul class="article-list">
-        <li class="">
+        {% for article in articles %}
+        <li class="{% if article.cover %}has-image {% endif %}">
           <a class="title black" target="_blank" href="">
-            浓浓粽香飘，我的端午情，多彩华夏画展
+            {{ article.title }}
           </a>
           <div class="sub-title">
-            Chrome浏览器也叫谷歌浏览器，虽然市面上的浏览器越来越多，好用的也不少，但谷歌浏览器依然是许多用户的首选。 除了性能、使用习惯等，各种良心插...
+            {{ article.subTitle }}
           </div>
           <div class="meta">
-            <a class="nickname" target="_blank" href="">
+            <a class="nickname pr1" target="_blank" href="">
               学无止境
             </a>
-
-            <i class="iconfont icon-eye"></i> 4  
-            <i class="iconfont icon-like"></i> 5
+            <span>
+              <i class="iconfont icon-eye"></i> {{ article.hits }} 
+            </span>
+            <span>
+              <i class="iconfont icon-like"></i> {{ article.likeNum }} 
+            </span>
           </div>
+          {% if article.cover %}
+            <img src="{{ article.cover }}" class="article-image" title="{{ article.title }}" alt="{{ article.title }}"/>
+          {% endif %}
         </li>
-        {# {% for article in articles %}
-          <li class="">
-            <div class="content">
-              <a class="title" target="_blank" href="">
-                {{ article.dataValues.title }}
-              </a>
-              <p class="abstract">
-              </p>
-              <div class="meta">
-                <a class="nickname" target="_blank" href="">
-                  
-                </a>
-                  <a target="_blank" href="/p/cd7f429f4278#comments">
-                    <i class="iconfont ic-list-comments"></i> 0
-                  </a>      
-                <span>
-                  <i class="iconfont ic-list-like"></i> 0
-                </span>
-              </div>
-            </div>
-          </li>
-        {% endfor %} #}
+        {% endfor %}
       </ul>      
     </div>
     <div class="col-md-3">

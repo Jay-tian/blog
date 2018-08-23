@@ -11,6 +11,9 @@ class ArticleDao extends BaseDao{
       title: {
         type: Sequelize.STRING(128),
       },
+      subTitle: {
+        type: Sequelize.STRING(256),
+      },
       categoryId: {
         type: Sequelize.INTEGER,
       },

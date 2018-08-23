@@ -15,6 +15,7 @@
     border-bottom: 1px solid #f1f1f1;
     padding: 10px 0;
     list-style: none;
+    position: relative;
   }
 
   .title {
@@ -27,5 +28,30 @@
     margin: 0 0 10px;
     line-height: 22px;
     color: #919191;
+  }
+
+  .has-image {
+    padding-right: 300px;
+
+    .article-image {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 250px;
+      min-height: 89px;
+    }
+  }
+
+  .meta {
+    color: #999;
+
+    span {
+      cursor: pointer;
+      padding-right: 4px;
+
+      &.act {
+        color: @primary-color;
+      }
+    }
   }
 }

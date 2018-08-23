@@ -17,7 +17,7 @@ let setting = {
   assetJs: false,
   assetName: 'webpack.assets.json',
   alias: {
-    common: path.join(rootPath, 'src/common'),
+    libs: path.join(rootPath, '/src/client/js/libs/'),
   },
   libs: rootPath + '/src/client/js/libs/',
   copyLibs: [

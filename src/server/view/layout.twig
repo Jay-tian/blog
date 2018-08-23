@@ -37,6 +37,9 @@
 {% endblock %}
   <script src="{{ asset('/dist/js/libs/jquery/dist/jquery.min.js', 0) }}"></script>
   <script src="{{ asset('/dist/js/app.js') }}"></script>
+  <script>
+    window.app.imageUploadUrl = "{{ url('imageUpload') }}";
+  </script>
   {% for script in scripts|default('') %}
     <script src="{{ asset(script) }}"> </script>
   {% endfor %}

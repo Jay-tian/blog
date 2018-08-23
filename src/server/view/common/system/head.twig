@@ -15,8 +15,9 @@
         {{ user.getNickname()|slice(0,1)|upperCase }}
       </span>
       <ul class="dropdown-menu">
-        <li><a href="{{ url('admin') }}">后台</a></li>
-        <li><a href="#">设置</a></li>
+        <li><a href="{{ url('createArticle') }}">创作</a></li>
+        {# <li><a href="{{ url('admin') }}">后台</a></li>
+        <li><a href="#">设置</a></li> #}
         <li><a href="{{ url('logout') }}">退出</a></li>
       </ul>
     </div>

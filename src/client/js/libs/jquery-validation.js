@@ -10,6 +10,8 @@ $.validator.setDefaults({
   errorPlacement: function(error, element) {
     element.closest('.form-group').append(error);
   },
+  invalidHandler: function() {
+  },
 });
 
 $.extend($.validator.messages, {
