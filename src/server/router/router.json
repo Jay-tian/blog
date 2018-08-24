@@ -25,6 +25,11 @@
     "controller": "Article",
     "methods": ["get", "post"]
   },
+  "showArticle": {
+    "path": "/article/:id",
+    "controller": "Article",
+    "methods": ["get"]
+  },
   "imageUpload": {
     "path": "/image/uploader",
     "controller": "System",

@@ -6,7 +6,7 @@ class ArticleService extends BaseService{
   }
 
   create(fields) {
-    this.getCurrentDao().create(fields);
+    return this.getCurrentDao().create(fields);
   }
 
   getCurrentDao() {
