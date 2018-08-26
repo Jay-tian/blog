@@ -32,6 +32,16 @@ class DefaultController extends BaseController {
     };
   }
 
+  editorArticle() {
+    return async (ctx) => {
+      let article = await this.articelService().getById(ctx.params.id);
+      return ctx.render('article/create.twig', {
+        user: ctx.state.user,
+        article: article,
+      });
+    };
+  }
+
   articelService()
   {
     return this.createService('article/ArticleService');
