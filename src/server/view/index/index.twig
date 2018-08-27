@@ -6,17 +6,23 @@
   <div class="main clearfix container">
     <div class="col-md-9">
       <ul class="article-list">
+        {% if not articles %}
+          <div class="empty">
+            暂无数据
+          </div>
+        {% endif %}
         {% for article in articles %}
+        {% set user = users[article.userId] %}
         <li class="{% if article.cover %}has-image {% endif %}">
-          <a class="title black" target="_blank" href="">
+          <a class="title black" target="_blank" href="{{ url('showArticle', {id: article.id}) }}">
             {{ article.title }}
           </a>
           <div class="sub-title">
             {{ article.subTitle }}
           </div>
           <div class="meta">
-            <a class="nickname pr1" target="_blank" href="">
-              {{ users[article.userId].nickname }}
+            <a class="nickname pr1" target="_blank" href="{{ url('showUser', {id: user.id}) }}">
+              {{ user.nickname }}
             </a>
             <span>
               <i class="iconfont icon-eye"></i> {{ article.hits }} 
@@ -35,7 +41,7 @@
     <div class="col-md-3">
       <ul class="apps">
         <li>
-          算法扑克
+          <a class="white" href="{{ url('showApp', 'poker') }}" target="_blank" >算法扑克</a>
         </li>
       </ul>
     </div>

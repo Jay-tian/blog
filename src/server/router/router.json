@@ -34,5 +34,17 @@
     "path": "/image/uploader",
     "controller": "System",
     "methods": ["post"]
+  },
+  "coding": {
+    "path": "/coding",
+    "controller": "Default"
+  },
+  "showUser": {
+    "path": "/user/:id",
+    "controller": "User"
+  },
+  "showApp": {
+    "path": "/apps/:id",
+    "controller": "App"
   }
 }

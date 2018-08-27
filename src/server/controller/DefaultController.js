@@ -1,9 +1,16 @@
 const BaseController = require('koa-symphony/src/controller/BaseController');
 const toolkit = require('koa-symphony/src/toolkit/index.js');
-const userTookit = require('../toolkit/UserToolkit');
+const daoTookit = require('../toolkit/DaoToolkit');
 class DefaultController extends BaseController {
   constructor(){
     super();
+  }
+
+  coding() {
+    return async (ctx) => {
+      return ctx.render('common/system/coding.twig', {
+      });
+    };
   }
 
   index() {
@@ -11,7 +18,8 @@ class DefaultController extends BaseController {
       let articles = await this.articleService().search({}, [['id', 'DESC']], 0, 20);
       let userIds = toolkit.arrayColumn(articles, 'userId', 'dataValues');
       let users = await this.getUserService().findByIds(userIds);
-      users = userTookit.filter(users);
+      users = daoTookit.index(users, 'id');
+
       return ctx.render('index/index.twig', {
         user: ctx.state.user,
         articles: articles,

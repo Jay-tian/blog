@@ -7,14 +7,11 @@
   <div class="article-main main container">
     <div class="title">
         <h1>
-            {{ article.title|default() }}
+          {{ article.title|default() }}
         </h1>
     </div>
     <div class="content">
         {{ article.content|default() }}
-    </div>  
-    {# <div>
-        点赞，喜欢，评论，
-    </div>      #}
+    </div>
   </div>
 {% endblock %}

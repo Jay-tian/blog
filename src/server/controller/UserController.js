@@ -7,6 +7,13 @@ class UserController extends BaseController {
     super();
   }
 
+  showUser() {
+    return async (ctx) => {
+      return ctx.render('common/system/coding.twig', {
+      });
+    };
+  }
+
   login() {
     return async (ctx, next) => {
       if ('POST' == ctx.request.method) {
