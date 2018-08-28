@@ -12,7 +12,7 @@
           </div>
         {% endif %}
         {% for article in articles %}
-        {% set user = users[article.userId] %}
+        {% set articleUser = users[article.userId]|default() %}
         <li class="{% if article.cover %}has-image {% endif %}">
           <a class="title black" target="_blank" href="{{ url('showArticle', {id: article.id}) }}">
             {{ article.title }}
@@ -21,8 +21,8 @@
             {{ article.subTitle }}
           </div>
           <div class="meta">
-            <a class="nickname pr1" target="_blank" href="{{ url('showUser', {id: user.id}) }}">
-              {{ user.nickname }}
+            <a class="nickname pr1" target="_blank" href="{{ url('showUser', {id: articleUser.id}) }}">
+              {{ articleUser.nickname }}
             </a>
             <span>
               <i class="iconfont icon-eye"></i> {{ article.hits }} 

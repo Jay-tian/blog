@@ -1,0 +1,9 @@
+{
+  "options": {
+    "profix": "/my"
+  },
+  "myArticles": {
+    "path": "/articles",
+    "controller": "My"
+  }
+}

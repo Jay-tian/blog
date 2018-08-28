@@ -19,9 +19,7 @@ class DefaultController extends BaseController {
       let userIds = toolkit.arrayColumn(articles, 'userId', 'dataValues');
       let users = await this.getUserService().findByIds(userIds);
       users = daoTookit.index(users, 'id');
-
       return ctx.render('index/index.twig', {
-        user: ctx.state.user,
         articles: articles,
         users: users,
       });

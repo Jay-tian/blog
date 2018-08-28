@@ -2,10 +2,6 @@
 {% set scripts = ['/dist/js/libs/jquery-validation.js', '/dist/js/libs/editor.md/editormd.min.js', '/dist/js/article/create/index.js'] %} 
 {% set styles = ['/dist/js/libs/editor.md/css/editormd.min.css', '/dist/css/article-create.css'] %}
 
-{% block title %}
-  create a blog
-{% endblock %}
-
 {% block main %}
   <div class="article-create container" id="article-create">
     <form method="POST" action="{{ url('createArticle') }}" id="article" data-image-save="{{ url('imageUpload') }}" enctype="multipart/form-data">
