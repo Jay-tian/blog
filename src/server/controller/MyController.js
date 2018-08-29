@@ -1,7 +1,4 @@
 const BaseController = require('koa-symphony/src/controller/BaseController');
-const fs = require('fs');
-const os = require('os');
-const path = require('path');
 
 class MyController extends BaseController {
   constructor(){
@@ -10,9 +7,16 @@ class MyController extends BaseController {
 
   myArticles() {
     return async (ctx) => {
-      return ctx.render('common/system/coding.twig', {
+      let user = ctx.state.user;
+      let articles = await this.articleService().findArticlesByUserId(user.get('id'));
+      return ctx.render('article/my-articles.twig', {
+        articles: articles
       });
     };    
+  }
+
+  articleService() {
+    return this.createService('article/ArticleService');
   }
 }
 

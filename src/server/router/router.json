@@ -25,6 +25,11 @@
     "controller": "Article",
     "methods": ["get", "post"]
   },
+  "updateArticle": {
+    "path": "/article/update/:id",
+    "controller": "Article",
+    "methods": ["get", "post"]
+  },
   "showArticle": {
     "path": "/article/:id",
     "controller": "Article",

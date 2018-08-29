@@ -6,6 +6,14 @@ class ArticleDao extends BaseDao{
     super('article');
   }
   
+  findByUserId(userId) {
+    return this.model.findAll({
+      where: {
+        userId: userId,
+      }
+    });
+  }
+  
   config() {
     return {
       title: {

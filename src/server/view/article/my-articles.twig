@@ -1,0 +1,12 @@
+{% extends 'layout.twig' %}
+{% set title =  '我的文章' %}
+{% block main %}
+  
+  <div class="my-article main container">
+    {% for article in articles %}
+      <div class="col-md-6">
+        {{ article.title }}
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

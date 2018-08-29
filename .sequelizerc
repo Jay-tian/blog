@@ -1,0 +1,4 @@
+module.exports = {
+  config: './config/db.json',
+  env: 'development',
+};

@@ -16,9 +16,7 @@ class DefaultController extends BaseController {
         this.articelService().create(ctx.request.body);
       }
 
-      return ctx.render('article/create.twig', {
-        user: ctx.state.user
-      });
+      return ctx.render('article/create.twig', {});
     };
   }
 
@@ -26,17 +24,17 @@ class DefaultController extends BaseController {
     return async (ctx) => {
       let article = await this.articelService().getById(ctx.params.id);
       return ctx.render('article/show.twig', {
-        user: ctx.state.user,
         article: article,
       });
     };
   }
 
-  editorArticle() {
+  updateArticle() {
+    console.log(123);
     return async (ctx) => {
       let article = await this.articelService().getById(ctx.params.id);
+      console.log(123);
       return ctx.render('article/create.twig', {
-        user: ctx.state.user,
         article: article,
       });
     };
