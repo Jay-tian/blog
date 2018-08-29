@@ -16,8 +16,8 @@
   {% for style in styles|default('') %}
     <link href="{{ asset(style) }}" rel="stylesheet">
   {% endfor %}
-  <link rel="icon" href="{{asset('/image/favicon.ico', 0)}}" type="image/x-icon"/>
-  <link rel="shortcut icon" href="{{asset('/image/favicon.ico', 0)}}" type="image/x-icon" media="screen"/>
+  <link rel="icon" href="{{asset('/image/favicon.ico')}}" type="image/x-icon"/>
+  <link rel="shortcut icon" href="{{asset('/image/favicon.ico')}}" type="image/x-icon" media="screen"/>
 </head>
 
 <body class="{{ bodyClass|default('') }}">

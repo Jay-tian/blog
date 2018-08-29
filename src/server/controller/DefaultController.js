@@ -27,7 +27,7 @@ class DefaultController extends BaseController {
   }
 
   articleService() {
-    return this.createService('Article/ArticleService');
+    return this.createService('article/ArticleService');
   }
 }
 
