@@ -1,12 +1,20 @@
 {% extends 'layout.twig' %}
 {% set title =  '我的文章' %}
+{% set styles = ['/dist/css/my.css'] %}
 {% block main %}
   
   <div class="my-article main container">
-    {% for article in articles %}
-      <div class="col-md-6">
-        {{ article.title }}
-      </div>
-    {% endfor %}
+    <ul>
+      {% for article in articles %}
+        <li>
+          <a href="{{url('showArticle', {id: article.id})}}">
+          {{ article.title }}
+          </a>
+          <a class="manage btn btn-primary" href="{{ url('updateArticle', {id: article.id}) }}">
+            管理
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
   </div>
 {% endblock %}
