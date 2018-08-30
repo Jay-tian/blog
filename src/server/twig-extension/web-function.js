@@ -9,13 +9,11 @@ module.exports = {
     }
 
     let rootPath = parameters.distAddress ? parameters.distAddress : '';
-    url = rootPath + url;
-    url = url.replace(webpackConfig.publicPath, '');
-    let urls = url.split('.');
     try {
-      return assets[urls[0]][urls[1]];
+      let urls = url.replace(webpackConfig.publicPath, '').split('.');
+      return rootPath + assets[urls[0]][urls[1]];
     } catch (error) {
-      return url;
+      return rootPath + url;
     }
   }
 };
