@@ -1,7 +1,8 @@
 {% extends 'layout.twig' %}
 {% set scripts = ['/dist/js/libs/jquery-validation.js', '/dist/js/libs/editor.md/editormd.min.js', '/dist/js/article/create/index.js'] %} 
 {% set styles = ['/dist/js/libs/editor.md/css/editormd.min.css', '/dist/css/article-create.css'] %}
-{% set actionUrl = article|default() ? url('updateArticle', {id: article.id}) :  url('createArticle') %}
+{% set actionUrl = article|default() ? url('updateArticle', {id: article.id|default(0)}) :  url('createArticle') %}
+
 {% block main %}
   <div class="article-create container" id="article-create">
     <form method="POST" action="{{ actionUrl }}" id="article" data-image-save="{{ url('imageUpload') }}" enctype="multipart/form-data">
