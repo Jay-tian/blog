@@ -1,6 +1,7 @@
 {% extends 'layout.twig' %}
 {% set title =  '我的文章' %}
 {% set styles = ['/dist/css/my.css'] %}
+{% set scripts = ['/dist/js/article/my/index.js'] %} 
 {% block main %}
   
   <div class="my-article main container">
@@ -10,8 +11,11 @@
           <a href="{{url('showArticle', {id: article.id})}}">
           {{ article.title }}
           </a>
-          <a class="manage btn btn-primary" href="{{ url('updateArticle', {id: article.id}) }}">
-            管理
+          <a class="pull-right manage btn btn-primary" href="{{ url('updateArticle', {id: article.id}) }}">
+            编辑
+          </a>
+          <a class="pull-right manage btn btn-primary ml1 js-delete" data-url="{{ url('deleteArticle', {id: article.id}) }}">
+            删除
           </a>
         </li>
       {% endfor %}
