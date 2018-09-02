@@ -31,7 +31,12 @@ class DefaultController extends BaseController {
 
   updateArticle() {
     return async (ctx) => {
-      let article = await this.articelService().getById(ctx.params.id);
+      let article = await this.articelService().tryManage(ctx.params.id, ctx.state.user);
+      if ('POST' == ctx.request.method) {
+        let body = ctx.request.body;
+        article = await this.articelService().update(body['id'], body);
+      }
+
       return ctx.render('article/create.twig', {
         article: article,
       });

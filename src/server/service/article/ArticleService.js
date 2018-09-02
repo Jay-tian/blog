@@ -5,6 +5,20 @@ class ArticleService extends BaseService{
     super();
   }
 
+  async tryManage(id, currentUser) {
+    let article = await this.getCurrentDao().getById(id);
+    if (currentUser.isAdmin || article.userId == currentUser.getUserId) {
+      return article;
+    }
+
+    throw new Error('你无权修改！');
+  }
+
+  update(id, fields) {
+    this.getCurrentDao().update(id, fields);
+    return this.getCurrentDao().getById(id);
+  }
+
   create(fields) {
     return this.getCurrentDao().create(fields);
   }
