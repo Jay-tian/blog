@@ -30,6 +30,11 @@
     "controller": "Article",
     "methods": ["get", "post"]
   },
+  "deleteArticle": {
+    "path": "/article/delete/:id",
+    "controller": "Article",
+    "methods": ["post"]
+  },
   "showArticle": {
     "path": "/article/:id",
     "controller": "Article",

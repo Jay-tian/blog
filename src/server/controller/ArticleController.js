@@ -43,6 +43,15 @@ class DefaultController extends BaseController {
     };
   }
 
+  deleteArticle() {
+    return async (ctx) => {
+      await this.articelService().tryManage(ctx.params.id, ctx.state.user);
+      await this.articelService().delete(ctx.params.id);
+      ctx.body = {message: '删除成功', success: 1};
+      return;
+    };
+  }
+
   articelService()
   {
     return this.createService('article/ArticleService');

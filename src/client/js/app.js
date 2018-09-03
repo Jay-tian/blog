@@ -7,7 +7,10 @@ window.app = {
 
 $('.js-delete').on('click', function() {
   let url = $(this).data('url');
-  $.post(url, function() {
-    alert(123);
-  });
+  let $target = $($(this).data('target'));
+  if (confirm('确定要删除吗')) {
+    $.post(url, function() {
+      $('body').trigger('js-delete', $target);
+    });
+  }
 });

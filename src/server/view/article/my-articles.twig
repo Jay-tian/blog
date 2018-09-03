@@ -7,14 +7,14 @@
   <div class="my-article main container">
     <ul>
       {% for article in articles %}
-        <li>
+        <li id="article-{{article.id}}">
           <a href="{{url('showArticle', {id: article.id})}}">
           {{ article.title }}
           </a>
           <a class="pull-right manage btn btn-primary" href="{{ url('updateArticle', {id: article.id}) }}">
             编辑
           </a>
-          <a class="pull-right manage btn btn-primary ml1 js-delete" data-url="{{ url('deleteArticle', {id: article.id}) }}">
+          <a data-target="#article-{{article.id}}" class="pull-right manage btn btn-primary ml1 js-delete" data-url="{{ url('deleteArticle', {id: article.id}) }}">
             删除
           </a>
         </li>
