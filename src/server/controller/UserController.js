@@ -51,7 +51,7 @@ class UserController extends BaseController {
   logout() {
     return async (ctx, next) => {
       this.sessionService().deleteById(ctx.session.id);
-      ctx.redirect('back', '/');
+      ctx.redirect('/');
       return;
     };
   }
