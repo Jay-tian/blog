@@ -1,4 +1,5 @@
 const BaseController = require('koa-symphony/src/controller/BaseController');
+const toolkitWeb = require('koa-symphony/src/toolkit/web.js');
 const toolkit = require('koa-symphony/src/toolkit/index.js');
 
 class DefaultController extends BaseController {
@@ -13,10 +14,13 @@ class DefaultController extends BaseController {
         body.userId = ctx.state.user.getUserId();
         body.content = body['content-html-code'];
         body.publishedTime = toolkit.timestamp();
-        this.articelService().create(ctx.request.body);
+        let article = await this.articelService().create(ctx.request.body);
+        let url  = toolkitWeb.urlGenerater('updateArticle', { id: article.id });
+        ctx.redirect(url);
+        return;
+      } else {
+        return ctx.render('article/create.twig', {});
       }
-
-      return ctx.render('article/create.twig', {});
     };
   }
 
@@ -52,8 +56,7 @@ class DefaultController extends BaseController {
     };
   }
 
-  articelService()
-  {
+  articelService() {
     return this.createService('article/ArticleService');
   }
 }

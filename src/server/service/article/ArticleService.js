@@ -14,8 +14,8 @@ class ArticleService extends BaseService{
     throw new Error('你无权修改！');
   }
 
-  update(id, fields) {
-    this.getCurrentDao().update(id, fields);
+  async update(id, fields) {
+    await this.getCurrentDao().update(id, fields);
     return this.getCurrentDao().getById(id);
   }
 
