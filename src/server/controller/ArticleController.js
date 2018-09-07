@@ -15,7 +15,7 @@ class DefaultController extends BaseController {
         body.content = body['content-html-code'];
         body.publishedTime = toolkit.timestamp();
         let article = await this.articelService().create(ctx.request.body);
-        let url  = toolkitWeb.urlGenerater('updateArticle', { id: article.id });
+        let url = toolkitWeb.urlGenerater('updateArticle', { id: article.id });
         ctx.redirect(url);
         return;
       } else {
