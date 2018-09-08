@@ -1,5 +1,5 @@
 let app = require('koa-symphony/src/kernel.js');
-app.listen(3000);
+app.listen(3000, '0.0.0.0');
 
 // let app = require('koa-symphony/src/kernel.js');
 // var Router = require('koa-router');

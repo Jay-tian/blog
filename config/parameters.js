@@ -8,4 +8,13 @@ module.exports = {
   serverPath: path.join(rootPath + '/src/server/'),
   version: version,
   // distAddress: 'http://dist.koa-dev.com',
+  email: {
+    service: 'qq',
+    port: 465,
+    secureConnection: true,
+    auth: {
+      user: '806338233@qq.com',
+      pass: 'ceuxoiewkxqtbcgf',
+    }
+  }
 };

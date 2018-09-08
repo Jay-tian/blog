@@ -8,6 +8,17 @@ $('.js-trans').on('click',function(){
 });
 
 
+$('#login').validate({
+  rules: {
+    nickname: {
+      required: true,
+    },
+    password: {
+      required: true,
+    }
+  }
+});
+
 $('#register').validate({
   rules: {
     nickname: {
@@ -15,6 +26,10 @@ $('#register').validate({
     },
     password: {
       required: true,
+    },
+    email: {
+      required: true,
+      email: true
     }
   }
 });

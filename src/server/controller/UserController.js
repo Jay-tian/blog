@@ -1,6 +1,7 @@
 const BaseController = require('koa-symphony/src/controller/BaseController');
-const crypto = require('crypto');
+
 const toolkit = require('koa-symphony/src/toolkit/index.js');
+let emailAuth  = global.symphony.parameters.email.auth.user;
 
 class UserController extends BaseController {
   constructor(){
@@ -36,11 +37,27 @@ class UserController extends BaseController {
     return async (ctx, next) => {
       let body = ctx.request.body;
       body.registerIp = ctx.ip;
+      body.locked = 1;
       let user = await this.getUserService().reigster(ctx.request.body);
 
+      let register = {
+        userId: user.id,
+        time: toolkit.timestamp(),
+        code: 'asdfkjqweoijasdkfj',
+      };
+
+      let registerKey = toolkit.encryptToBase64('asdfkjqweoijasdkfj');
+      let emailBody = {
+        from: `"学无止境" <${emailAuth}>`,
+        to: user.email,
+        subject: '无境网注册成功',
+        html: `请点击以下链接，进行邮箱验证<a href="http://47.99.90.167/activate/${registerKey}" target="_blank">激活账号</a>`,
+      };
+      global.symphony.sendEmail(emailBody);
       ctx.session.data = {
         userId: user.dataValues['id'],
         deadline: toolkit.timestamp() + 24*60*60*30,
+        register: register,
       };
 
       ctx.redirect('/');

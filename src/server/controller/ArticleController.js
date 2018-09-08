@@ -38,6 +38,7 @@ class DefaultController extends BaseController {
       let article = await this.articelService().tryManage(ctx.params.id, ctx.state.user);
       if ('POST' == ctx.request.method) {
         let body = ctx.request.body;
+        body.content = body['content-html-code'];
         article = await this.articelService().update(body['id'], body);
       }
 
