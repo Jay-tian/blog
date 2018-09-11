@@ -16,6 +16,10 @@
     "controller": "User",
     "methods": ["post"]
   },
+  "registerEmailValidate": {
+    "path": "/register/email/verify",
+    "controller": "User"
+  },
   "logout": {
     "path": "/logout",
     "controller": "User"

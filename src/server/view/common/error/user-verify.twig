@@ -1,0 +1,8 @@
+{% extends 'layout.twig' %}
+{% set bodyClass = 'fullscreen' %}
+{% block main %}
+  <div class="full-warning">
+  {{ message|default('当前账号未激活，请在24小时内前往您的注册邮箱进行激活！') }}
+    
+  </div>
+{% endblock %}
