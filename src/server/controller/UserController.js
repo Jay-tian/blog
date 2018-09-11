@@ -87,9 +87,7 @@ class UserController extends BaseController {
       }
       await this.getUserService().update(session.get('data')['userId'], {locked: '0'});
       
-      return ctx.render('common/error/user-verify.twig', {
-        message: '账号已激活！',
-      });
+      ctx.redirect('/login');
     }
   }
 
