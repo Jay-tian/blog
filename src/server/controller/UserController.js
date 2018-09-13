@@ -91,13 +91,18 @@ class UserController extends BaseController {
     }
   }
 
-  emailExist(email) {
-    return !(await this.getUserService().getByEmail(email)) ? false : true;
+  emailExist() {
+    return async (ctx, next) => {
+      ctx.body = !await this.getUserService().countByEmail(ctx.params.email) ? false : true;
+      return;
+    }
   }
 
-
-  nicknameExist(nickname) {
-    return !(await this.getUserService().getByNickname(nickname)) ? false : true;
+  nicknameExist() {
+    return async (ctx, next) => {
+      ctx.body = !await this.getUserService().countByNickname(ctx.params.nickname) ? false : true;
+      return;
+    }
   }
 
   _registerValidateEmailBody(user, domain, validateKey) {

@@ -35,10 +35,15 @@ $.extend($.validator.messages, {
 });
 
 $.validator.addMethod('remote', function(value, element, params) {
+  if (!value) {
+    return this.optional(element);
+  }
+
   let url = $(element).data('url') ? $(element).data('url') : null;
   if (!url) {
     return true;
   }
+  url = decodeURIComponent(url).replace('$', value);
 
   let type = params.type ? params.type : 'GET';
   this.valueCache ? this.valueCache : {};
@@ -46,7 +51,6 @@ $.validator.addMethod('remote', function(value, element, params) {
 
   if (cacheKey in this.valueCache) {
     $.validator.messages.remote = this.valueCache[cacheKey].message;
-    
     return this.optional(element) || this.valueCache[cacheKey].isSuccess;
   }
 
@@ -54,10 +58,12 @@ $.validator.addMethod('remote', function(value, element, params) {
     url: url,
     async: false,
     type: type,
-    dataType: 'json'
-  }).success((response) => {
-    this.valueCache[cacheKey] = {};
-    this.valueCache[cacheKey].isSuccess = response;
+    dataType: 'json',
+    success: (response) => {
+      console.log(response);
+      this.valueCache[cacheKey] = {};
+      this.valueCache[cacheKey].isSuccess = response;
+    }
   });
   
   return this.optional(element) || this.valueCache[cacheKey].isSuccess;
