@@ -91,6 +91,15 @@ class UserController extends BaseController {
     }
   }
 
+  emailExist(email) {
+    return !(await this.getUserService().getByEmail(email)) ? false : true;
+  }
+
+
+  nicknameExist(nickname) {
+    return !(await this.getUserService().getByNickname(nickname)) ? false : true;
+  }
+
   _registerValidateEmailBody(user, domain, validateKey) {
     return `Hi, ${user.nickname}<br/>
 

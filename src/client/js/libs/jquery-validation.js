@@ -33,3 +33,33 @@ $.extend($.validator.messages, {
   max: $.validator.format('请输入不大于 {0} 的数值'),
   min: $.validator.format('请输入不小于 {0} 的数值')
 });
+
+$.validator.addMethod('remote', function(value, element, params) {
+  let url = $(element).data('url') ? $(element).data('url') : null;
+  if (!url) {
+    return true;
+  }
+
+  let type = params.type ? params.type : 'GET';
+  this.valueCache ? this.valueCache : {};
+  let cacheKey = url + type;
+
+  if (cacheKey in this.valueCache) {
+    $.validator.messages.remote = this.valueCache[cacheKey].message;
+    
+    return this.optional(element) || this.valueCache[cacheKey].isSuccess;
+  }
+
+  $.ajax({
+    url: url,
+    async: false,
+    type: type,
+    dataType: 'json'
+  }).success((response) => {
+    this.valueCache[cacheKey] = {};
+    this.valueCache[cacheKey].isSuccess = response;
+  });
+  
+  return this.optional(element) || this.valueCache[cacheKey].isSuccess;
+
+});

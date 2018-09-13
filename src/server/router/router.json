@@ -60,5 +60,13 @@
   "showApp": {
     "path": "/apps/:id",
     "controller": "App"
+  },
+  "emailExist": {
+    "path": "/user/:email/exist",
+    "controller": "User"
+  },
+  "nicknameExist": {
+    "path": "/user/:nickname/exist",
+    "controller": "User"
   }
 }
