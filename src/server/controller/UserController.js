@@ -54,7 +54,7 @@ class UserController extends BaseController {
       let emailBody = {
         from: `"学无止境" <${emailAuth}>`,
         to: user.email,
-        subject: '无境网注册成功',
+        subject: '学无止境网注册激活',
         html: this._registerValidateEmailBody(user, domain, registerValidateKey),
       };
       global.symphony.sendEmail(emailBody);
