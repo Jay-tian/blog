@@ -16,18 +16,14 @@
           注册
         </span>
       </div>
-      <form autocomplete="false" role="presentation" action="{{ url('login') }}" method="post" class="form-horizontal" id="login">
-        <div class="control-group">
-          <div class="controls">
-            <input placeholder="用户名"  autocomplete="false" class="form-control" name="nickname" type="text">
-          </div>
+      <form autocomplete="false" role="presentation" action="{{ url('login') }}" method="post" id="login">
+        <div class="form-group">
+          <input placeholder="用户名"  autocomplete="false" class="form-control" name="nickname" type="text">
         </div>
-        <div class="control-group mt2">
-          <div class="controls">
-            <input placeholder="密码"  autocomplete="false" class="form-control" type="password" name="password">
-          </div>
+        <div class="form-group">
+          <input placeholder="密码"  autocomplete="false" class="form-control" type="password" name="password">
         </div>
-        <button class="btn btn-primary btn-main mt2" type="submit">登陆</button>
+        <button class="btn btn-primary btn-main mt1" type="submit">登陆</button>
       </form>
     </div>
 
@@ -40,23 +36,17 @@
           登录
         </span>
       </div>
-      <form action="{{ url('register') }}" id="register" method="post" class="form-horizontal">
-        <div class="control-group">
-          <div class="controls">
-            <input placeholder="用户名"  autocomplete="off" data-url="{{ url('nicknameExist', {nickname: '$'}) }}" class="form-control" name="nickname" type="text">
-          </div>
+      <form action="{{ url('register') }}" id="register" method="post">
+        <div class="form-group">
+          <input placeholder="用户名"  autocomplete="off" data-url="{{ url('nicknameExist', {nickname: '$'}) }}" class="form-control" name="nickname" type="text">
         </div>
-        <div class="control-group mt2">
-          <div class="controls">
-            <input placeholder="邮箱"  autocomplete="off" data-url="{{ url('emailExist', {email: '$'}) }}" class="form-control" type="text" name="email">
-          </div>
+        <div class="form-group">
+          <input placeholder="邮箱"  autocomplete="off" data-url="{{ url('emailExist', {email: '$'}) }}" class="form-control" type="text" name="email">
         </div>        
-        <div class="control-group mt2">
-          <div class="controls">
-            <input placeholder="密码"  autocomplete="off" class="form-control" type="password" name="password">
-          </div>
+        <div class="form-group">
+          <input placeholder="密码"  autocomplete="off" class="form-control" type="password" name="password">
         </div>
-        <button class="btn btn-primary btn-main mt2" type="submit">注册</button>
+        <button class="btn btn-primary btn-main mt1" type="submit">注册</button>
       </form>
     </div>
   </div>

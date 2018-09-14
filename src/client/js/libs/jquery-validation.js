@@ -8,9 +8,21 @@ $.validator.setDefaults({
   ajax: false,
   currentDom: null,
   errorPlacement: function(error, element) {
-    element.closest('.form-group').append(error);
+    let $text = `<div class="form-error">
+      <div class="content">
+        <i class="iconfont icon-gantanhao"></i>
+        ${error.text()} 
+      </div>
+    </div>`;
+    element.closest('.form-group').find('.form-error').remove();
+    element.closest('.form-group').append($text);
   },
-  invalidHandler: function() {
+  invalidHandler: function(data, validator) {
+    const errorNum = validator.numberOfInvalids();
+    if (errorNum) {
+      $(validator.errorList[0].element).focus();
+    }
+    console.log(data);
   },
 });
 
@@ -62,7 +74,7 @@ $.validator.addMethod('remote', function(value, element, params) {
     success: (response) => {
       console.log(response);
       this.valueCache[cacheKey] = {};
-      this.valueCache[cacheKey].isSuccess = response;
+      this.valueCache[cacheKey].isSuccess = !response;
     }
   });
   
