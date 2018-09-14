@@ -1,4 +1,4 @@
-const BaseDao = require('koa-symphony/src/dao/user/BaseDao.js');
+const BaseDao = require('koa-symphony/src/dao/user/UserDao.js');
 
 class UserDao extends BaseDao{
   constructor(){
