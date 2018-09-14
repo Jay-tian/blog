@@ -17,6 +17,9 @@ $.validator.setDefaults({
     element.closest('.form-group').find('.form-error').remove();
     element.closest('.form-group').append($text);
   },
+  unhighlight: function(element) {
+    $(element).removeClass('form-error-message').closest('.form-group').find('.form-error').remove();
+  },
   invalidHandler: function(data, validator) {
     const errorNum = validator.numberOfInvalids();
     if (errorNum) {
@@ -29,7 +32,7 @@ $.validator.setDefaults({
 $.extend($.validator.messages, {
   required: '这是必填字段',
   remote: '请修正此字段',
-  email: '请输入有效的电子邮件地址',
+  email: '请输入有效的邮箱',
   url: '请输入有效的网址',
   date: '请输入有效的日期',
   dateISO: '请输入有效的日期 (YYYY-MM-DD)',
