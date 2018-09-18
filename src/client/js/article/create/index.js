@@ -1,5 +1,6 @@
 let $article = $('#article');
 let uploader = require('libs/uploader.js');
+const jcrop = require('tsj-jcrop');
 
 editormd({
   id: 'content',
@@ -27,7 +28,7 @@ $article.validate({
     },
     title: {
       required: true,
-      minlength: 6,
+      minlength: 5,
       maxlength: 25,
     },
     subTitle: {
@@ -37,18 +38,18 @@ $article.validate({
     },
   },
   messages: {
-    contentMd: {
-      required: '请输入正文内容',
-    },
     subTitle: {
-      required: '请输入副标题',
-      minlength: '标题不能小于10个字符',
-      maxlength: '标题不能大于50个字符',
+      minlength: '不能小于10个字符',
+      maxlength: '不能大于50个字符',
     },
     title: {
-      required: '请输入标题',
-      minlength: '标题不能小于6个字符',
-      maxlength: '标题不能大于25个字符',
+      minlength: '不能小于5个字符',
+      maxlength: '不能大于25个字符',
     },
   }
+});
+
+$('#crop').on('click',function() {
+  console.log(jcrop);
+  jcrop.attach($('#articleCover')[0]);
 });

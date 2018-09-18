@@ -4,6 +4,7 @@
     "glob": "^7.1.3",
     "koa-symphony": "1.0.21",
     "koa-websocket": "^5.0.1",
+    "tsj-jcrop": "^1.0.4",
     "webuploader": "^0.1.8"
   },
   "devDependencies": {

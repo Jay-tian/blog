@@ -17,11 +17,14 @@
             <!--用来存放文件信息-->
             <div id="uploader-list" class="uploader-list"> 
               {% if article.cover|default() %}
-                <img width="200" class="mb2 img-responsive" src="{{ asset(article.cover) }}" />
+                <img id="articleCover" width="200" class="mb2 img-responsive" src="{{ asset(article.cover) }}" />
               {% endif %}
             </div>
             <div class="btns">
-              <div id="filePicker">封面上传</div>
+              <div class="pull-left btn btn-primary" id="filePicker">封面上传</div>
+              <span id="crop" class="btn btn-primary ml2  {% if not article.cover|default() %}hidden{% endif %}" data-target="articleCover" data-x="200" data-y="100">
+                封面裁切
+              </span>
               <input name="cover" type="hidden" id="cover" value="{{article.cover|default()}}">
             </div>
           </div>

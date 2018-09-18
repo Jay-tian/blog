@@ -4,7 +4,7 @@
 {% block main %}
   
   <div class="article-main main container">
-    <div class="col-md-9">
+    <div class="col-md-12">
       <h1 class="title mb3">
         {{ article.title|default() }}
       </h1>
@@ -12,8 +12,8 @@
           {{ article.content|default() }}
       </div>
     </div>
-    <div class="col-md-3">
+    {# <div class="col-md-3">
 
-    </div>
+    </div> #}
   </div>
 {% endblock %}
