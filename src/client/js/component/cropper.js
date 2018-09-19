@@ -1,18 +1,23 @@
 require('tsj-jcrop/js/Jcrop.min.js');
 
 module.exports = function($element) {
-  // $box = $('<div id="cropper" class="cropper"></div>');
+  let $box = $(`<div id="cropper" class="cropper">
+    <div class="cropper-image">
+      <i class="iconfont icon-loadingspinner circle"></i>
+    </div>
+  </div>`);
   if ($('body').find('#cropper').length) {
     return;
   }
+  $('body').append($box);
 
   let img = new Image();
   img.src = $element.attr('src');
   if (img.complete) {
-    console.log();
+    console.log(img);
   } else {
     img.onload = function () {
-      console.log();
+      console.log(img);
     };
   }
 
