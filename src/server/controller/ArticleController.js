@@ -9,6 +9,9 @@ class DefaultController extends BaseController {
 
   createArticle() {
     return async (ctx) => {
+      if (!ctx.state.user.isLogin()) {
+        throw new Error('请先登录！');
+      }
       if ('POST' == ctx.request.method) {
         let body = ctx.request.body;
         body.userId = ctx.state.user.getUserId();
@@ -36,6 +39,7 @@ class DefaultController extends BaseController {
   updateArticle() {
     return async (ctx) => {
       let article = await this.articelService().tryManage(ctx.params.id, ctx.state.user);
+
       if ('POST' == ctx.request.method) {
         let body = ctx.request.body;
         body.content = body['content-html-code'];

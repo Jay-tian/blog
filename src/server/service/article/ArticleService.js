@@ -7,7 +7,7 @@ class ArticleService extends BaseService{
 
   async tryManage(id, currentUser) {
     let article = await this.getCurrentDao().getById(id);
-    if (currentUser.isAdmin || article.userId == currentUser.getUserId) {
+    if (currentUser.isAdmin() || article.userId == currentUser.getUserId) {
       return article;
     }
 

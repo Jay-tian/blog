@@ -1,6 +1,6 @@
 let $article = $('#article');
-let uploader = require('libs/uploader.js');
-const jcrop = require('tsj-jcrop');
+let uploader = require('../../component/uploader.js');
+let cropper = require('../../component/cropper.js');
 
 editormd({
   id: 'content',
@@ -50,6 +50,10 @@ $article.validate({
 });
 
 $('#crop').on('click',function() {
-  console.log(jcrop);
-  jcrop.attach($('#articleCover')[0]);
+  let $this = $(this);
+  let config = {};
+  let callback = function(data){
+    console.log(data);
+  };
+  cropper($($this.data('target')), config, callback);
 });

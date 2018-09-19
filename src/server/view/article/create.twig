@@ -12,7 +12,7 @@
         <div class="form-group">
           <input name="subTitle" id="subTitle" class="form-control" autocomplete="off" placeholder="副标题" value="{{article.subTitle|default()}}" maxlength='50'>
         </div>
-        <div class="form-group">
+        <div class="form-group clearfix">
           <div id="uploader" class="wu-example">
             <!--用来存放文件信息-->
             <div id="uploader-list" class="uploader-list"> 
@@ -22,7 +22,7 @@
             </div>
             <div class="btns">
               <div class="pull-left btn btn-primary" id="filePicker">封面上传</div>
-              <span id="crop" class="btn btn-primary ml2  {% if not article.cover|default() %}hidden{% endif %}" data-target="articleCover" data-x="200" data-y="100">
+              <span id="crop" class="btn btn-primary ml2  {% if not article.cover|default() %}hidden{% endif %}" data-target="#articleCover" data-x="200" data-y="100">
                 封面裁切
               </span>
               <input name="cover" type="hidden" id="cover" value="{{article.cover|default()}}">
