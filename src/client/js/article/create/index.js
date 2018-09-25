@@ -1,6 +1,6 @@
 let $article = $('#article');
 let uploader = require('../../component/uploader.js');
-let cropper = require('../../component/cropper.js');
+let Cropper = require('../../component/cropper.js');
 
 editormd({
   id: 'content',
@@ -51,9 +51,9 @@ $article.validate({
 
 $('#crop').on('click',function() {
   let $this = $(this);
-  let config = {};
-  let callback = function(data){
-    console.log(data);
-  };
-  cropper($($this.data('target')), config, callback);
+  // let callback = function(data){
+  //   console.log(data);
+  // };
+
+  new Cropper($($this.data('target')), {aspectRatio: 125/100});
 });

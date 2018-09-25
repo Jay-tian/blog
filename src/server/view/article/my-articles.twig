@@ -7,7 +7,7 @@
   <div class="my-article main container">
     <ul>
       {% for article in articles %}
-        <li id="article-{{article.id}}">
+        <li id="article-{{article.id}}" class="clearfix">
           <a href="{{url('showArticle', {id: article.id})}}">
           {{ article.title }}
           </a>

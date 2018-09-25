@@ -28,6 +28,13 @@ class SystemController extends BaseController {
       return;
     };      
   }
+
+  imageCropper() {
+    return async (ctx, next) => {
+      ctx.request.body;
+      console.log(ctx.request.body);
+    };
+  }
 }
 
 module.exports = SystemController;
