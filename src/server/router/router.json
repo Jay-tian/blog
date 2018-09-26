@@ -34,6 +34,11 @@
     "controller": "Article",
     "methods": ["get", "post"]
   },
+  "updateArticleCover": {
+    "path": "/article/cover/update/:id",
+    "controller": "Article",
+    "methods": ["post"]
+  },
   "deleteArticle": {
     "path": "/article/delete/:id",
     "controller": "Article",

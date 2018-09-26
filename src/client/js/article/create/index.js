@@ -15,7 +15,7 @@ editormd({
 let upload = uploader();
 
 // 文件上传成功，给item添加成功class, 用样式标记上传成功。
-upload.on( 'uploadSuccess', function(file, response ) {
+upload.on('uploadSuccess', function(file, response ) {
   $('#cover').val(response.url);
   $('#uploader-list').html(`<img id="articleCover" width="200" class="mb2 img-responsive" src="${response.url}" />`);
 });
@@ -53,6 +53,9 @@ $('#crop').on('click',function() {
   let $this = $(this);
   let callback = function(data){
     $('#cover').val(data.path);
+    $.post($this.data('save'), {cover: data.path}, function(res) {
+      alert(res.message);
+    });
   };
 
   new Cropper($($this.data('target')), {aspectRatio: $this.data('rate'), url: $this.data('cropperUrl')}, callback);

@@ -52,6 +52,20 @@ class DefaultController extends BaseController {
     };
   }
 
+  updateArticleCover() {
+    return async (ctx) => {
+      await this.articelService().tryManage(ctx.params.id, ctx.state.user);
+      let body = ctx.request.body;
+      this.articelService().update(ctx.params.id, {cover: body['cover']});
+      ctx.body = {
+        success: 1,
+        message: '文章封面更新成功'
+      }
+      
+      return;
+    }
+  }
+
   deleteArticle() {
     return async (ctx) => {
       await this.articelService().tryManage(ctx.params.id, ctx.state.user);
