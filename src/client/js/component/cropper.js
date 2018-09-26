@@ -1,7 +1,7 @@
 require('tsj-jcrop/js/Jcrop.min.js');
 
 module.exports  = class Cropper {
-  constructor($element, config) {
+  constructor($element, config, callback) {
     if ($('body').find('#cropper').length) {
       return;
     }
@@ -20,6 +20,7 @@ module.exports  = class Cropper {
     }, config);
 
     this.init();
+    this.callback = callback;
   }
 
   _createImage() {
@@ -56,12 +57,15 @@ module.exports  = class Cropper {
     if (img.width > standardWidth) {
       $cropper.width(standardWidth);
       $cropper.height(img.height/(img.width/standardWidth));
+    } else {
+      $cropper.width(img.width);
     }
-    if ($cropper.height() > standardHeight) {
-      if (img.height/standardHeight > img.width/standardHeight) {
-        $cropper.width(img.width/(img.height/standardHeight));
-      }
+
+    if (img.height > standardHeight) {
       $cropper.height(standardHeight);
+      $cropper.width(img.width/(img.height/standardHeight));
+    } else {
+      $cropper.height(img.height);
     }
 
     $cropper.css({marginLeft:$cropper.width()/-2, marginTop: $cropper.height()/-2 });
@@ -78,10 +82,18 @@ module.exports  = class Cropper {
       let cropperConfig = {
         width: rate*selection.w,
         height: rate*selection.h,
-        x: selection.x,
-        y: selection.y,
+        x: rate*selection.x,
+        y: rate*selection.y,
+        value: this.$element.attr('src'),
       };
       
+      $.post(this.config.url, cropperConfig, (data) => {
+        this.$element.attr('src', data.path);
+        $('#cropper').remove();
+        if ('function' === typeof(this.callback)) {
+          this.callback(data);
+        }
+      });
     });
   }
 };

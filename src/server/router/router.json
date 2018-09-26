@@ -49,6 +49,11 @@
     "controller": "System",
     "methods": ["post"]
   },
+  "imageCropper": {
+    "path": "/image/cropper",
+    "controller": "System",
+    "methods": ["post"]
+  },
   "coding": {
     "path": "/coding",
     "controller": "Default"

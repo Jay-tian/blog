@@ -6,6 +6,7 @@ let rootPath = process.cwd();
 module.exports = {
   rootPath: rootPath,
   serverPath: path.join(rootPath + '/src/server/'),
+  publicPath: path.join(rootPath + '/public/'),
   version: version,
   // distAddress: 'http://dist.koa-dev.com',
   email: {

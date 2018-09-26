@@ -1,7 +1,4 @@
 const BaseController = require('koa-symphony/src/controller/BaseController');
-const fs = require('fs');
-const os = require('os');
-const path = require('path');
 
 class SystemController extends BaseController {
   constructor(){
@@ -31,8 +28,11 @@ class SystemController extends BaseController {
 
   imageCropper() {
     return async (ctx, next) => {
-      ctx.request.body;
-      console.log(ctx.request.body);
+      let result = await global.symphony.cropper(global.symphony.parameters.rootPath + '/public'+ctx.request.body.value, ctx.request.body);
+      console.log(result);
+      ctx.body = {success: 1, path: '/'+result.path.replace(global.symphony.parameters.publicPath, '')};
+
+      return;
     };
   }
 }

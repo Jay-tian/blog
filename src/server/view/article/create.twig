@@ -22,7 +22,7 @@
             </div>
             <div class="btns">
               <div class="pull-left btn btn-primary" id="filePicker">封面上传</div>
-              <span id="crop" class="btn btn-primary ml2  {% if not article.cover|default() %}hidden{% endif %}" data-target="#articleCover" data-x="200" data-y="100">
+              <span id="crop" class="btn btn-primary ml2  {% if not article.cover|default() %}hidden{% endif %}" data-target="#articleCover" data-rate="1.25" data-cropper-url="{{ url('imageCropper') }}">
                 封面裁切
               </span>
               <input name="cover" type="hidden" id="cover" value="{{article.cover|default()}}">
