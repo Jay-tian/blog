@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "bootstrap": "3",
+    "jsonlint": "^1.6.3",
     "koa-symphony": "1.0.23",
     "koa-websocket": "^5.0.1",
     "tsj-jcrop": "1.0.2",

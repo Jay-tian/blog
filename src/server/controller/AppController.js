@@ -10,7 +10,8 @@ class AppController extends BaseController {
 
   showApp() {
     return async (ctx) => {
-      return ctx.render('common/system/coding.twig', {
+      let code = ctx.params.id;
+      return ctx.render(`app/${code}.twig`, {
       });
     };    
   }

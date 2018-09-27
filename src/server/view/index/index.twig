@@ -4,7 +4,7 @@
 
 {% block main %}
   <div class="main clearfix container">
-    <div class="col-md-12">
+    <div class="col-md-10">
       <ul class="article-list">
         {% if not articles %}
           <div class="empty">
@@ -38,12 +38,18 @@
         {% endfor %}
       </ul>      
     </div>
-    {# <div class="col-md-3">
-      <ul class="apps">
-        <li>
+    <div class="col-md-2">
+      <ul class="apps text-center">
+        {# <li>
           <a class="white" href="{{ url('showApp', 'poker') }}" target="_blank" >算法扑克</a>
+        </li> #}
+        <li>
+          <a class="white" href="{{ url('showApp', 'json') }}" target="_blank" >Json解析</a>
         </li>
+        {# <li>
+          <a class="white" href="{{ url('showApp', 'json') }}" target="_blank" >加密／解密</a>
+        </li> #}
       </ul>
-    </div> #}
+    </div>
   </div>
 {% endblock %} 
