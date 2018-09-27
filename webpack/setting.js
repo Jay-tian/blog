@@ -24,7 +24,7 @@ let setting = {
     'swiper/dist',
     'jquery/dist',
     'editor.md/',
-    'jsonlint/',
+    'jsonlint/lib/',
   ],
 };
 
