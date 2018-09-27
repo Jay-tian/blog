@@ -5,6 +5,7 @@ const rootPath = process.cwd();
 
 let purifyCssPaths = glob.sync(path.join(rootPath, '/src/server/view/**/*.twig'));
 purifyCssPaths = purifyCssPaths.concat(glob.sync(path.join(rootPath, '/src/client/js/**/*.js')));
+purifyCssPaths.push(path.join(rootPath, '/node_modules/tsj-jcrop/js/Jcrop.min.js'));
 
 let setting = {
   entry: rootPath + '/src/client/js/',
