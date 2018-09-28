@@ -53,9 +53,10 @@ $('#crop').on('click',function() {
   let $this = $(this);
   let callback = function(data){
     $('#cover').val(data.path);
-    $.post($this.data('save'), {cover: data.path}, function(res) {
-      alert(res.message);
-    });
+    if ($this.data('save')) {
+      $.post($this.data('save'), {cover: data.path}, function() {
+      });
+    }
   };
 
   new Cropper($($this.data('target')), {aspectRatio: $this.data('rate'), url: $this.data('cropperUrl')}, callback);
