@@ -6,3 +6,4 @@ public/.DS_Store
 /webpack-cache
 /public/data
 config/*
+config/db.json
