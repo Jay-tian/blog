@@ -4,7 +4,7 @@
     "editor.md": "^1.5.0",
     "jquery-validation": "^1.18.0",
     "jsonlint": "^1.6.3",
-    "koa-symphony": "1.0.23",
+    "koa-symphony": "1.0.24",
     "koa-websocket": "^5.0.1",
     "particles.js": "^2.0.0",
     "swiper": "^4.4.1",
