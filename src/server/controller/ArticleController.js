@@ -30,6 +30,11 @@ class DefaultController extends BaseController {
   showArticle() {
     return async (ctx) => {
       let article = await this.articelService().getById(ctx.params.id);
+      if (!article) {
+        throw new Error('NOT FOUND'); 
+      }
+      
+      this.articelService().incrementHits(ctx.params.id);
       return ctx.render('article/show.twig', {
         article: article,
       });
@@ -51,6 +56,13 @@ class DefaultController extends BaseController {
       });
     };
   }
+
+  // waveViewTimes() {
+  //   return async (ctx) => {
+  //     let body = ctx.request.body;
+  //     article = await this.articelService().update(body['id'], body);
+  //   };
+  // }
 
   updateArticleCover() {
     return async (ctx) => {

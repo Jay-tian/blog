@@ -18,6 +18,7 @@ let upload = uploader();
 upload.on('uploadSuccess', function(file, response ) {
   $('#cover').val(response.url);
   $('#uploader-list').html(`<img id="articleCover" width="200" class="mb2 img-responsive" src="${response.url}" />`);
+  $('#crop').removeClass('hidden');
 });
 
 

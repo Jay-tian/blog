@@ -19,6 +19,10 @@ class ArticleService extends BaseService{
     return this.getCurrentDao().getById(id);
   }
 
+  incrementHits(id) {
+    this.getCurrentDao().incrementHits(id);
+  }
+
   create(fields) {
     return this.getCurrentDao().create(fields);
   }

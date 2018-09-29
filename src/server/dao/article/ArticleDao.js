@@ -6,6 +6,12 @@ class ArticleDao extends BaseDao{
     super('article');
   }
   
+  incrementHits(id) {
+    this.model.findById(id).then(article => {
+      return article.increment('hits');
+    });
+  }
+
   findByUserId(userId) {
     return this.model.findAll({
       where: {

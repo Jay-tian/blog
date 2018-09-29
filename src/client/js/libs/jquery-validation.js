@@ -25,7 +25,6 @@ $.validator.setDefaults({
     if (errorNum) {
       $(validator.errorList[0].element).focus();
     }
-    console.log(data);
   },
 });
 

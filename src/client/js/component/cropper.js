@@ -39,6 +39,10 @@ module.exports  = class Cropper {
         this._initImage(img);
       };
     }
+
+    $('body').on('click', '.cropper-close-btn', function() {
+      $('#cropper').remove();
+    });
   }
 
   _initImage(img) {
@@ -70,13 +74,13 @@ module.exports  = class Cropper {
 
     $cropper.css({marginLeft:$cropper.width()/-2, marginTop: $cropper.height()/-2 });
 
-    $cropper.html(img).append('<span class=\'cropper-btn btn btn-primary\'>截图</span>');
+    $cropper.html(img).append('<span class=\'cropper-close-btn btn btn-primary\'>关闭</span><span class=\'js-cropper-btn btn btn-primary\'>截图</span>');
     let self = this;
     $(img).Jcrop(this.config, function() {
       self.jcropApi = this;
     });
 
-    $('#cropper').on('click', '.cropper-btn', () => {
+    $('#cropper').on('click', '.js-cropper-btn', () => {
       let rate = originImageWidth/$(img).width();
       let selection = this.jcropApi.ui.selection.last;
       let cropperConfig = {
