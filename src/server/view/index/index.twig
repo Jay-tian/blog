@@ -39,17 +39,7 @@
       </ul>      
     </div>
     <div class="col-md-2">
-      <ul class="apps text-center">
-        {# <li>
-          <a class="white" href="{{ url('showApp', 'poker') }}" target="_blank" >算法扑克</a>
-        </li> #}
-        <li>
-          <a class="white" href="{{ url('showApp', 'json') }}" target="_blank" >Json解析</a>
-        </li>
-        {# <li>
-          <a class="white" href="{{ url('showApp', 'json') }}" target="_blank" >加密／解密</a>
-        </li> #}
-      </ul>
+      {% include 'index/app-list.twig' %}
     </div>
   </div>
 {% endblock %} 

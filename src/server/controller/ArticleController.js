@@ -34,7 +34,9 @@ class DefaultController extends BaseController {
         throw new Error('NOT FOUND'); 
       }
       
-      this.articelService().incrementHits(ctx.params.id);
+      if (ctx.state.user.getUserId() != article['userId']) {
+        this.articelService().incrementHits(ctx.params.id);
+      }
       return ctx.render('article/show.twig', {
         article: article,
       });

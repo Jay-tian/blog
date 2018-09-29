@@ -1,7 +1,7 @@
 const jsonformat = require('./json-format.js');
 let $show = $('.show');
 
-$('#json-src').on('change', function() {
+$('#json-src').on('keyup', function() {
   let $this = $(this);
   try{
     window.jsonlint.parse($this.val());
