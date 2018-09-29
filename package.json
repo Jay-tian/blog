@@ -2,6 +2,7 @@
   "dependencies": {
     "bootstrap": "3",
     "editor.md": "^1.5.0",
+    "highlightjs": "^9.10.0",
     "jquery-validation": "^1.18.0",
     "jsonlint": "^1.6.3",
     "koa-symphony": "1.0.24",
