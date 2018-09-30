@@ -23,7 +23,7 @@
     "webpack-dev": "NODE_ENV=development settingPath='/webpack/setting.js' webpack-dev-server --config './webpack/webpack.config.js'",
     "fix": "./node_modules/.bin/eslint --fix",
     "start": "set NODE_ENV=production & forever start app.js",
-    "nodemon": "forever start -c nodemon app.js",
+    "nodemon": "forever start -c nodemon app.js --exitcrash",
     "stop": "forever stop app.js",
     "restart": "forever restart app.js"
   }
