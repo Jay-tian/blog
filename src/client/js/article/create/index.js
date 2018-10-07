@@ -10,6 +10,16 @@ editormd({
   imageUpload: true,
   saveHTMLToTextarea: true,
   imageUploadURL: $article.data('imageSave'),
+  toolbarIcons : function() {
+    return [
+      'undo', 'redo', '|',
+      'bold', 'del', 'italic', 'quote', 'ucwords', 'uppercase', 'lowercase', '|',
+      'h1', 'h2', 'h3', 'h4', 'h5', 'h6', '|',
+      'list-ul', 'list-ol', 'hr', '|',
+      'link', 'reference-link', 'image', 'code', 'code-block', 'table', 'datetime', 'pagebreak', '|',
+      'watch', 'fullscreen', 'clear', 'search', '|',
+    ];
+  },
 });
 
 let upload = uploader();
@@ -17,7 +27,7 @@ let upload = uploader();
 // 文件上传成功，给item添加成功class, 用样式标记上传成功。
 upload.on('uploadSuccess', function(file, response ) {
   $('#cover').val(response.url);
-  $('#uploader-list').html(`<img id="articleCover" width="200" class="mb2 img-responsive" src="${response.url}" />`);
+  $('#uploader-list').html(`<img id='articleCover' width='200' class='mb2 img-responsive' src='${response.url}' />`);
   $('#crop').removeClass('hidden');
 });
 
