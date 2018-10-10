@@ -57,6 +57,9 @@ class ArticleDao extends BaseDao{
       },
       publishedTime: {
         type: Sequelize.INTEGER,
+      },
+      isPublish: {
+        type: Sequelize.BOOLEAN,
       }
     };
   }

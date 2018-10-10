@@ -15,7 +15,7 @@ class DefaultController extends BaseController {
 
   index() {
     return async (ctx) => {
-      let articles = await this.articleService().search({}, [['id', 'DESC']], 0, 20);
+      let articles = await this.articleService().search({'isPublish': 1}, [['id', 'DESC']], 0, 20);
       let userIds = toolkit.arrayColumn(articles, 'userId', 'dataValues');
       let users = await this.getUserService().findByIds(userIds);
       users = daoTookit.index(users, 'id');

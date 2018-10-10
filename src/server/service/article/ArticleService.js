@@ -24,6 +24,7 @@ class ArticleService extends BaseService{
   }
 
   create(fields) {
+    fields['isPublish'] = 0;
     return this.getCurrentDao().create(fields);
   }
 
