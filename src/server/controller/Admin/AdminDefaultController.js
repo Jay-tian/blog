@@ -7,7 +7,7 @@ class DefaultController extends BaseController {
 
   index() {
     return async (ctx) => {
-      return ctx.render('index/index.twig');
+      return ctx.render('admin/layout.twig');
     };
   }
 }

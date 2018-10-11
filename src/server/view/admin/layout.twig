@@ -1,0 +1,48 @@
+{% import 'macro.twig' as _macro %}
+<!DOCTYPE html>
+<html lang="{{ lang|default('zh-CN') }}">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>
+    {{ title|default('无境-后台管理') }}
+  </title>
+  <meta name="keywords" content="{{ keywords|default('koa2 webpack node blog jay') }}"/>
+  <meta name="description" content="{{ description|default('基于node的框架，集成koa，wepback，twig模版引擎，快速开发') }}">
+  <link href="{{ asset('/dist/css/admin/main.css') }}" rel="stylesheet">
+  {% for style in styles|default('') %}
+    <link href="{{ asset(style) }}" rel="stylesheet">
+  {% endfor %}
+  <link rel="icon" href="{{asset('/image/favicon.ico')}}" type="image/x-icon"/>
+  <link rel="shortcut icon" href="{{asset('/image/favicon.ico')}}" type="image/x-icon" media="screen"/>
+</head>
+
+<body class="{{ bodyClass|default('') }}" id="app">
+{% block body %}
+  <el-container>
+    <el-header>
+        {% block header %}header{% endblock %}
+    </el-header>
+    <el-container>
+      <el-aside width="200px">
+        Aside
+      </el-aside>
+      <el-main>
+        {% block main %}
+        {% endblock %} 
+      </el-main>
+    </el-container>
+  </el-container>
+  <div id="login-modal" class="modal" data-url=""></div>
+  <div id="modal" class="modal"></div>
+{% endblock %}
+  <script src="{{ asset('/dist/js/admin/index.js', 0) }}"></script>
+
+  {% for script in scripts|default('') %}
+    <script src="{{ asset(script) }}"> </script>
+  {% endfor %}
+</body>
+</html>
