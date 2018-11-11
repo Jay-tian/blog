@@ -1,1 +1,28 @@
-@import "~element-ui/packages/theme-chalk/lib/index.css";
+@import "../main.less";
+
+.admin-toobar {
+  position: fixed;
+  height: 100%;
+  width: 150px;
+  background: @primary-color;
+
+  li {
+    padding: 10px 20px;
+    text-align: center;
+
+    a {
+      color: #fff;
+    }
+
+    &.active {
+      a {
+        color: #fbbe07;
+      }
+    }
+  }
+}
+
+.admin-main {
+  padding-left: 180px;
+  padding-top: 20px;
+}

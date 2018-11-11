@@ -5,5 +5,10 @@
   "index": {
     "path": "/",
     "controller": "AdminDefault"
+  },
+  "publishArticle": {
+    "path": "/article/publish/:id",
+    "controller": "Article",
+    "methods": ["post"]
   }
 }

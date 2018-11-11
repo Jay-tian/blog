@@ -7,11 +7,28 @@ class DefaultController extends BaseController {
     super();
   }
 
+  publishArticle() {
+    return async (ctx) => {
+      let user = ctx.state.user;
+      if (!user.isAdmin()) {
+        throw new Error('无权发布！');
+      }
+
+      this.articelService().publish(ctx.params.id);
+      ctx.body = {
+        success: 1,
+      };
+
+      return;
+    };
+  }
+
   createArticle() {
     return async (ctx) => {
       if (!ctx.state.user.isLogin()) {
         throw new Error('请先登录！');
       }
+
       if ('POST' == ctx.request.method) {
         let body = ctx.request.body;
         body.userId = ctx.state.user.getUserId();

@@ -1,4 +1,3 @@
-{% import 'macro.twig' as _macro %}
 <!DOCTYPE html>
 <html lang="{{ lang|default('zh-CN') }}">
 <head>
@@ -22,25 +21,22 @@
 
 <body class="{{ bodyClass|default('') }}" id="app">
 {% block body %}
-  <el-container>
-    <el-header>
-        {% block header %}header{% endblock %}
-    </el-header>
-    <el-container>
-      <el-aside width="200px">
-        Aside
-      </el-aside>
-      <el-main>
-        {% block main %}
-        {% endblock %} 
-      </el-main>
-    </el-container>
-  </el-container>
-  <div id="login-modal" class="modal" data-url=""></div>
-  <div id="modal" class="modal"></div>
+  <div class="admin-toobar">
+    <ul class="">
+      <li class="active">
+        <a href="/admin/article/manage">文章管理</a>
+      </li>
+      <li>
+        <a href="/admin/user/manage">用户管理</a>
+      </li>
+    </ul>
+  </div>
+  <div class="admin-main">
+    {% block main %}
+    {% endblock %}
+  </div>
 {% endblock %}
-  <script src="{{ asset('/dist/js/admin/index.js', 0) }}"></script>
-
+  <script src="{{ asset('/dist/js/libs/jquery/dist/jquery.min.js') }}"></script>
   {% for script in scripts|default('') %}
     <script src="{{ asset(script) }}"> </script>
   {% endfor %}

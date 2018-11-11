@@ -1,2 +1,42 @@
 {% extends 'admin/layout.twig' %}
+{% set scripts = ['/dist/js/admin/article/index.js'] %}
+{% block main %}
+  <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>标题</th>
+          <th>创建日期</th>
+          <th>创建人</th>
+          <th>状态</th>
+          <th>管理</th>
+        </tr>
+      </thead>
+      <tbody>
 
+        {% for article in articles %}
+          {% set articleUser = users[article.userId]|default() %}
+            <tr>
+              <td>{{ article.title }}</td>
+              <td>
+                {{ article.createdAt }}
+              </td>
+              <td>
+                {{ user.nickname }}
+              </td>
+              <td>
+                {% if article.isPublish %}
+                  <label class="label label-primary">已发布</label>
+                {% else %}
+                  <label class="label label-default">未发布</label>
+                {% endif  %}
+              </td>
+              <td>
+                <button>删除</button>
+                <button class="js-publish" data-url="{{ url('publishArticle', {id: article.id}) }}">发布</button>
+              </td>
+            </tr>
+        {% endfor %}
+
+      </tbody>
+    </table>
+{% endblock %}

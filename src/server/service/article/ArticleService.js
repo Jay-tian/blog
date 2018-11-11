@@ -23,6 +23,12 @@ class ArticleService extends BaseService{
     this.getCurrentDao().incrementHits(id);
   }
 
+  publish(id) {
+    this.getCurrentDao().update(id, {
+      'isPublish': 1
+    });
+  }
+
   create(fields) {
     fields['isPublish'] = 0;
     return this.getCurrentDao().create(fields);
