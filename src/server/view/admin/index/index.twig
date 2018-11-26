@@ -31,8 +31,9 @@
                 {% endif  %}
               </td>
               <td>
-                <button>删除</button>
-                <button class="js-publish" data-url="{{ url('publishArticle', {id: article.id}) }}">发布</button>
+                {# <button btn btn-primary >删除</button> #}
+                <button class="btn btn-primary js-publish {% if article.isPublish %}hidden{% endif %}" data-url="{{ url('publishArticle', {id: article.id}) }}">发布</button>
+                <button class="btn btn-warning js-publish {% if not article.isPublish %}hidden{% endif %}" data-url="{{ url('unPublishArticle', {id: article.id}) }}">取消发布</button>
               </td>
             </tr>
         {% endfor %}

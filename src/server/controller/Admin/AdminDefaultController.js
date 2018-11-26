@@ -7,7 +7,7 @@ class DefaultController extends BaseController {
     super();
   }
 
-  index() {
+  adminIndex() {
     return async (ctx) => {
       let articles = await this.articleService().search({}, [['id', 'DESC']], 0, 20);
       let userIds = toolkit.arrayColumn(articles, 'userId', 'dataValues');

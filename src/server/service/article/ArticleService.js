@@ -29,6 +29,12 @@ class ArticleService extends BaseService{
     });
   }
 
+  unPublish(id) {
+    this.getCurrentDao().update(id, {
+      'isPublish': 0
+    });
+  }
+
   create(fields) {
     fields['isPublish'] = 0;
     return this.getCurrentDao().create(fields);

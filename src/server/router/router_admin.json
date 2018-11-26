@@ -2,12 +2,17 @@
   "options": {
     "profix": "/admin"
   },
-  "index": {
+  "adminIndex": {
     "path": "/",
     "controller": "AdminDefault"
   },
   "publishArticle": {
     "path": "/article/publish/:id",
+    "controller": "Article",
+    "methods": ["post"]
+  },
+  "unPublishArticle": {
+    "path": "/article/unpublish/:id",
     "controller": "Article",
     "methods": ["post"]
   }

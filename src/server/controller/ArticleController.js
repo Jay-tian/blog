@@ -7,6 +7,22 @@ class DefaultController extends BaseController {
     super();
   }
 
+  unPublishArticle() {
+    return async (ctx) => {
+      let user = ctx.state.user;
+      if (!user.isAdmin()) {
+        throw new Error('无权发布！');
+      }
+
+      this.articelService().unPublish(ctx.params.id);
+      ctx.body = {
+        success: 1,
+      };
+
+      return;
+    };
+  }
+
   publishArticle() {
     return async (ctx) => {
       let user = ctx.state.user;
