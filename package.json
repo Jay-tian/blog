@@ -1,24 +1,23 @@
 {
   "dependencies": {
+    "koa-symphony": "1.0.24",
+    "koa-websocket": "^5.0.1",
+    "node-schedule": "^1.3.1"
+  },
+  "devDependencies": {
+    "jay-webpack-scaffold": "^1.1.19",
+    "webpack-cli": "^3.1.0",
+    "web-fingerprint": "^1.0.1",
+    "particles.js": "^2.0.0",
+    "swiper": "^4.4.1",
+    "tsj-jcrop": "1.0.2",
+    "webuploader": "^0.1.8",
     "bootstrap": "3",
     "editor.md": "^1.5.0",
     "element-ui": "^2.4.8",
     "highlightjs": "^9.10.0",
     "jquery-validation": "^1.18.0",
-    "jsonlint": "^1.6.3",
-    "koa-symphony": "1.0.24",
-    "koa-websocket": "^5.0.1",
-    "node-schedule": "^1.3.1",
-    "particles.js": "^2.0.0",
-    "swiper": "^4.4.1",
-    "tsj-jcrop": "1.0.2",
-    "vue": "^2.5.17",
-    "web-fingerprint": "^1.0.1",
-    "webuploader": "^0.1.8"
-  },
-  "devDependencies": {
-    "jay-webpack-scaffold": "^1.1.19",
-    "webpack-cli": "^3.1.0"
+    "jsonlint": "^1.6.3"
   },
   "scripts": {
     "build": "NODE_ENV=production settingPath='/webpack/setting.js' webpack --config './webpack/webpack.config.js'",

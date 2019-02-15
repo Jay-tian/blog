@@ -10683,10 +10683,6 @@ vscode-debugprotocol@1.32.0, vscode-debugprotocol@^1.24.0:
   version "1.32.0"
   resolved "https://registry.npmjs.org/vscode-debugprotocol/-/vscode-debugprotocol-1.32.0.tgz#cca9eccb3f73ded5e525e01621a72ca2bb577dc3"
 
-vue@^2.5.17:
-  version "2.5.17"
-  resolved "https://registry.npmjs.org/vue/-/vue-2.5.17.tgz#0f8789ad718be68ca1872629832ed533589c6ada"
-
 walk@2.3.x:
   version "2.3.14"
   resolved "https://registry.npmjs.org/walk/-/walk-2.3.14.tgz#60ec8631cfd23276ae1e7363ce11d626452e1ef3"
