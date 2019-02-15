@@ -1,0 +1,30 @@
+{% extends 'layout.twig' %}
+{% set bodyClass = 'fullscreen' %}
+{% set title = '网页指纹 无境-jay 博客' %}
+{% set description = '网页查看，附带指纹' %}
+{% set keywords = '指纹，web指纹，网站指纹，网页指纹sdk' %}
+{% set scripts = ['/dist/js/fingerprint/index.js'] %}
+{% set styles = [] %} 
+
+{% block main %}
+  <style>
+    .change-text{
+      position: absolute;
+      height: 100px;
+      top: 50%;
+      margin-top: -50px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .change-text .text {
+      border: 1px solid #f3f3f3;
+      padding: 5px 8px;
+      outline: none;
+    }
+  </style>
+  <div class='change-text'>  
+    <input value='Jay' id='text' class="text mr2" autocomplete='off'>
+    <span class='btn btn-primary' id='change'>Change</span>
+  </div>
+{% endblock %}
