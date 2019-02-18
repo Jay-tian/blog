@@ -14,7 +14,6 @@
     "webuploader": "^0.1.8",
     "bootstrap": "3",
     "editor.md": "^1.5.0",
-    "element-ui": "^2.4.8",
     "highlightjs": "^9.10.0",
     "jquery-validation": "^1.18.0",
     "jsonlint": "^1.6.3"
