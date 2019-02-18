@@ -12,7 +12,8 @@
   "watch": [
     "src/common",
     "src/server",
-    "node_modules/koa-symphony/"
+    "node_modules/koa-symphony/",
+    "public/dist"
   ],
   "env": {
       "NODE_ENV": "development"
