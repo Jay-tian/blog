@@ -7,3 +7,4 @@ public/.DS_Store
 /public/data
 config/*
 config/db.json
+nodemon.json

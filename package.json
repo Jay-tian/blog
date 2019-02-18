@@ -5,7 +5,7 @@
     "node-schedule": "^1.3.1"
   },
   "devDependencies": {
-    "jay-webpack-scaffold": "^1.1.19",
+    "jay-webpack-scaffold": "^1.1.20",
     "webpack-cli": "^3.1.0",
     "web-fingerprint": "^1.0.2",
     "particles.js": "^2.0.0",
@@ -21,7 +21,7 @@
   "scripts": {
     "build": "NODE_ENV=production settingPath='/webpack/setting.js' webpack --config './webpack/webpack.config.js'",
     "dev": "npm run server-dev & npm run webpack-dev",
-    "server-dev": "NODE_ENV=development nodemon app.js",
+    "server-dev": "nodemon  app.js",
     "webpack-dev": "NODE_ENV=development settingPath='/webpack/setting.js' webpack-dev-server --config './webpack/webpack.config.js'",
     "fix": "./node_modules/.bin/eslint --fix",
     "start": "set NODE_ENV=production & forever start app.js",
