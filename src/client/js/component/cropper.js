@@ -68,8 +68,6 @@ module.exports  = class Cropper {
     if (img.height > standardHeight) {
       $cropper.height(standardHeight);
       $cropper.width(img.width/(img.height/standardHeight));
-    } else {
-      $cropper.height(img.height);
     }
 
     $cropper.css({marginLeft:$cropper.width()/-2, marginTop: $cropper.height()/-2 });
