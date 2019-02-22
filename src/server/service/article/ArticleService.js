@@ -34,8 +34,8 @@ class ArticleService extends BaseService{
     return this.getCurrentDao().create(fields);
   }
 
-  findArticlesByUserId(userId) {
-    return this.getCurrentDao().findByUserId(userId);
+  findArticlesByUserId(userId, offset, start) {
+    return this.getCurrentDao().findByUserId(userId, offset, start);
   }
 
   getCurrentDao() {

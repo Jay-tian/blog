@@ -5,7 +5,7 @@
 {% block main %}
   
   <div class="my-article main container">
-    <ul>
+    <ul class="article-list">
       {% for article in articles %}
         <li id="article-{{article.id}}" class="clearfix">
           <a href="{{url('showArticle', {id: article.id})}}">
@@ -20,5 +20,7 @@
         </li>
       {% endfor %}
     </ul>
+    
+    {% include 'common/system/pagination.twig' %}
   </div>
 {% endblock %}

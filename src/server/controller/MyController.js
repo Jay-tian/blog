@@ -8,7 +8,9 @@ class MyController extends BaseController {
   myArticles() {
     return async (ctx) => {
       let user = ctx.state.user;
-      let articles = await this.articleService().findArticlesByUserId(user.get('id'));
+      let count = await this.articleService().count({userId: user.get('id')});
+      let articles = await this.articleService().findArticlesByUserId(user.get('id'), 0, count);
+      
       return ctx.render('article/my-articles.twig', {
         articles: articles
       });
