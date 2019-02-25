@@ -21,6 +21,6 @@
       {% endfor %}
     </ul>
     
-    {% include 'common/system/pagination.twig' %}
+    {% include 'common/system/pagination.twig' with {pagination: pagination} %}
   </div>
 {% endblock %}
