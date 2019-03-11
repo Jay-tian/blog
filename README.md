@@ -18,8 +18,8 @@ server {
     server_name www.blog-dev.com;
 
     location ~ ^/dist/* {
-        if (!-f /var/www/blog/dev.lock){
-          proxy_pass http://127.0.0.1:3000;
+        if (-f /var/www/blog/dev.lock){
+          proxy_pass http://127.0.0.1:8020;
         }
      }
 
