@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface) => {
-    queryInterface.sequelize.query(
+    return queryInterface.sequelize.query(
       `
       ALTER TABLE article ADD COLUMN isPublish tinyint(1) unsigned NOT NULL DEFAULT '0'  COMMENT '是否发布' after publishedTime
       `

@@ -1,0 +1,28 @@
+{% extends 'layout.twig' %}
+{% set bodyClass = 'fullscreen' %}
+{% set title = '炉石模拟器' %}
+{% set description = '炉石模拟器， 炉石' %}
+{% set keywords = '炉石，炉石模拟器' %}
+{% set scripts = ['/dist/js/hearthstone/index.js'] %}
+{% set styles = ['/dist/css/hearthstone.css'] %} 
+
+{% block body %}
+  <div class="hero top">
+    <div class="my-cards">
+      <ul>
+
+      </ul>
+    </div>
+    <div class="avatar">
+      <img src="{{ asset('/image/hearthstone/soldier.png') }}" />
+    </div>
+  </div>
+
+  <div class="hero buttom">
+    <div class="avatar">
+      <img src="{{ asset('/image/hearthstone/wizard.png') }}" />
+    </div>
+    <div class="my-cards">
+    </div>
+  </div>
+{% endblock %}

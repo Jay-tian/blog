@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface) => {
-    queryInterface.sequelize.query(
+    return queryInterface.sequelize.query(
       `CREATE TABLE IF NOT EXISTS setting (
         id int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
         name varchar(128) default '' COMMENT '名称',

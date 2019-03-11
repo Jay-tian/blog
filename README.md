@@ -1,13 +1,21 @@
 # blog
 ## 安装
 ```
+yarn
+yarn add nodemon
 npm run dev
 ``` 
+
+## 执行数据库脚本
+```
+yarn add sequelize
+sequelize   db:migrate
+```
 
 ## nginx 配置
 ```
 server {
-    server_name www.koa-easy.com;
+    server_name www.blog-dev.com;
 
     location ~ ^/dist/* {
         if (!-f /var/www/blog/dev.lock){
