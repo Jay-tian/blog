@@ -1,4 +1,30 @@
 # blog
+## 安装
+```
+npm run dev
+``` 
+
+## nginx 配置
+```
+server {
+    server_name www.koa-easy.com;
+
+    location ~ ^/dist/* {
+        if (!-f /var/www/blog/dev.lock){
+          proxy_pass http://127.0.0.1:3000;
+        }
+     }
+
+    location / {
+        proxy_pass http://127.0.0.1:3000;
+        proxy_redirect     off;
+        proxy_set_header   Host             $host;
+        proxy_set_header   X-Real-IP        $remote_addr;
+        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+    }
+}
+```
+
 1. 个人主页
 3. redis
 5. 估点扑克
@@ -17,3 +43,4 @@
 21. 主从备份
 22. 压力测试
 23. lodash
+
