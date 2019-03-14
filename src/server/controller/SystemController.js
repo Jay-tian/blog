@@ -28,8 +28,12 @@ class SystemController extends BaseController {
 
   imageCropper() {
     return async (ctx, next) => {
-      let result = await global.symphony.cropper(global.symphony.parameters.rootPath + '/public'+ctx.request.body.value, ctx.request.body);
-      ctx.body = {success: 1, path: '/'+result.replace(global.symphony.parameters.publicPath, '')};
+      try {
+        let result = await global.symphony.cropper(global.symphony.parameters.rootPath + '/public'+ctx.request.body.value, ctx.request.body);
+        ctx.body = {success: 1, path: '/'+result.replace(global.symphony.parameters.publicPath, '')};
+      } catch (err) {
+        ctx.body = {success: 0, err: err};
+      }
 
       return;
     };
