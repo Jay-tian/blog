@@ -12,11 +12,13 @@ class ArticleDao extends BaseDao{
     });
   }
 
-  findByUserId(userId) {
+  findByUserId(userId, offset=0, limit=Math.max()) {
     return this.model.findAll({
       where: {
         userId: userId,
-      }
+      },
+      offset: offset,
+      limit: limit
     });
   }
   

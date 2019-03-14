@@ -1,12 +1,13 @@
 {% extends 'layout.twig' %}
 {% set bodyClass = 'fullscreen' %}
-{% set title = '网页指纹 无境-jay 博客' %}
-{% set description = '网页查看，附带指纹' %}
-{% set keywords = '指纹，web指纹，网站指纹，网页指纹sdk' %}
-{% set scripts = ['/dist/js/fingerprint/index.js'] %}
-{% set styles = [] %} 
+{% set title = 'web水印 无境-jay 博客' %}
+{% set description = 'web水印' %}
+{% set keywords = 'fingerprint,web水印,水印, web指纹' %}
+{% set scripts = ['/dist/js/json-decode/index.js', '/dist/js/libs/jsonlint/lib/jsonlint.js'] %}
+{% set styles = ['/dist/css/json-decode.css'] %} 
 
 {% block main %}
+<<<<<<< HEAD
   <style>
     .change-text{
       position: absolute;
@@ -31,5 +32,13 @@
         项目地址
       </a>
     </span>
+=======
+  <div class="app-json">
+    <div class="content clearfix">
+      <textarea  class="json-src" id="json-src" placeholder="在此输入json字符串"></textarea>
+      <pre class="show">
+      </pre>
+    </div>
+>>>>>>> 26332f26e717d4a986f2ca3dd1d1cbd19b88d5a8
   </div>
 {% endblock %}

@@ -1,0 +1,26 @@
+{% if pagination.isShow %}
+  <nav aria-label="Page navigation" class="text-center">
+    <ul class="pagination">
+    
+      {% if pagination.getPrePage > 0 %}
+        <li>
+          <a href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+      {% endif %}
+      {% for page in pagination.getPages %}
+        <li><a href="{{ pagination.getUrl(page) }}">
+          {{page}}</a>
+        </li>
+      {% endfor %}
+      {% if pagination.getNextPage > 0 %}
+        <li>
+          <a href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
+{% endif %}

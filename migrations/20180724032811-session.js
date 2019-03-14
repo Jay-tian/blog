@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface) => {
-    queryInterface.sequelize.query(
+    return queryInterface.sequelize.query(
       `CREATE TABLE session (
           id int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT "主键" ,
           sessId varbinary(128) NOT NULL,

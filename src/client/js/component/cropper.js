@@ -65,7 +65,7 @@ module.exports  = class Cropper {
       $cropper.width(img.width);
     }
 
-    if (img.height > standardHeight) {
+    if (img.height > $body.height()) {
       $cropper.height(standardHeight);
       $cropper.width(img.width/(img.height/standardHeight));
     }
@@ -90,6 +90,12 @@ module.exports  = class Cropper {
       };
       
       $.post(this.config.url, cropperConfig, (data) => {
+        if (!data.success) {
+          alert('裁切失败');
+          $('#cropper').remove();
+          console.log(data);
+          return;
+        }
         this.$element.attr('src', data.path);
         $('#cropper').remove();
         if ('function' === typeof(this.callback)) {

@@ -1,0 +1,34 @@
+.hero {
+  height: 22%;
+  width: 100%;
+  min-height: 200px;
+  position: absolute;
+
+  .avatar {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  &.top {
+    top: 0;
+
+    .avatar {
+      bottom: 0;
+    }
+  }
+
+  &.buttom {
+    bottom: 0;
+    top: none;
+
+    .avatar {
+      top: 0;
+    }
+  }
+}
