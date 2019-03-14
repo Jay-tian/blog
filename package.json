@@ -25,10 +25,10 @@
     "jsonlint": "^1.6.3"
   },
   "scripts": {
-    "build": "NODE_ENV=production settingPath='/webpack/setting.js' webpack --config './webpack/webpack.config.js'",
+    "build": "cross-env NODE_ENV=production settingPath='/webpack/setting.js' webpack --config './webpack/webpack.config.js'",
     "dev": "npm run server-dev & npm run webpack-dev",
-    "server-dev": "nodemon  app.js",
-    "webpack-dev": "NODE_ENV=development settingPath='/webpack/setting.js' webpack-dev-server --config './webpack/webpack.config.js'",
+    "server-dev": "cross-env NODE_ENV=development nodemon app.js",
+    "webpack-dev": "cross-env NODE_ENV=development settingPath='/webpack/setting.js' webpack-dev-server --config './webpack/webpack.config.js'",
     "fix": "./node_modules/.bin/eslint --fix",
     "start": "set NODE_ENV=production & forever start app.js",
     "nodemon": "forever start -c nodemon app.js --exitcrash",
