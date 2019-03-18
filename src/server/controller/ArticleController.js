@@ -63,7 +63,11 @@ class DefaultController extends BaseController {
   showArticle() {
     return async (ctx) => {
       let article = await this.articelService().getById(ctx.params.id);
-      if (!article || !article['isPublish']) {
+      if (!article) {
+        throw new Error('NOT FOUND'); 
+      }
+
+      if (!article['isPublish'] && ctx.state.user.getUserId() != article['userId']) {
         throw new Error('NOT FOUND'); 
       }
       
