@@ -33,6 +33,7 @@
     "start": "set NODE_ENV=production & forever start app.js",
     "nodemon": "forever start -c nodemon app.js --exitcrash",
     "stop": "forever stop app.js",
-    "restart": "forever restart app.js"
+    "restart": "forever restart app.js",
+    "pm2": "pm2 start ecosystem.config.js"
   }
 }
