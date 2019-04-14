@@ -2437,6 +2437,12 @@ commander@^2.13.0, commander@^2.8.1:
   version "2.18.0"
   resolved "https://registry.npmjs.org/commander/-/commander-2.18.0.tgz#2bf063ddee7c7891176981a2cc798e5754bc6970"
 
+commander@~1.1.1:
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/commander/-/commander-1.1.1.tgz#50d1651868ae60eccff0a2d9f34595376bc6b041"
+  dependencies:
+    keypress "0.1.x"
+
 commander@~2.13.0:
   version "2.13.0"
   resolved "https://registry.npmjs.org/commander/-/commander-2.13.0.tgz#6964bca67685df7c1f1430c584f07d7597885b9c"
@@ -6038,6 +6044,10 @@ keygrip@~1.0.2:
   version "1.0.2"
   resolved "https://registry.npmjs.org/keygrip/-/keygrip-1.0.2.tgz#ad3297c557069dea8bcfe7a4fa491b75c5ddeb91"
 
+keypress@0.1.x:
+  version "0.1.0"
+  resolved "https://registry.npmjs.org/keypress/-/keypress-0.1.0.tgz#4a3188d4291b66b4f65edb99f806aa9ae293592a"
+
 killable@^1.0.0:
   version "1.0.1"
   resolved "https://registry.npmjs.org/killable/-/killable-1.0.1.tgz#4c8ce441187a061c7474fb87ca08e2a638194892"
@@ -7072,6 +7082,10 @@ nan@^2.5.1, nan@^2.9.2:
   version "2.11.0"
   resolved "https://registry.npmjs.org/nan/-/nan-2.11.0.tgz#574e360e4d954ab16966ec102c0c049fd961a099"
 
+nan@~2.10.0:
+  version "2.10.0"
+  resolved "https://registry.npmjs.org/nan/-/nan-2.10.0.tgz#96d0cd610ebd58d4b4de9cc0c6828cda99c7548f"
+
 nanomatch@^1.2.9:
   version "1.2.13"
   resolved "https://registry.npmjs.org/nanomatch/-/nanomatch-1.2.13.tgz#b87a8aa4fc0de8fe6be88895b38983ff265bd119"
@@ -7212,6 +7226,12 @@ node-zip@^1.1.1:
   resolved "https://registry.npmjs.org/node-zip/-/node-zip-1.1.1.tgz#94d1ad674a3cd46a1588dd736f4a9a78c757eb62"
   dependencies:
     jszip "2.5.0"
+
+nodejieba@^2.2.1:
+  version "2.3.0"
+  resolved "https://registry.npmjs.org/nodejieba/-/nodejieba-2.3.0.tgz#ba6934b949ce486c6a57e4cb7df9f4a5fb3336c4"
+  dependencies:
+    nan "~2.10.0"
 
 nodemailer@0.1.20:
   version "0.1.20"
@@ -7861,6 +7881,15 @@ pinkie-promise@^2.0.0:
 pinkie@^2.0.0:
   version "2.0.4"
   resolved "https://registry.npmjs.org/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
+
+pinyin@^2.8.3:
+  version "2.8.3"
+  resolved "https://registry.npmjs.org/pinyin/-/pinyin-2.8.3.tgz#301ccb4358ccfe802523c4bd640a612bee4d7c4b"
+  dependencies:
+    commander "~1.1.1"
+    object-assign "^4.0.1"
+  optionalDependencies:
+    nodejieba "^2.2.1"
 
 pirates@^4.0.0:
   version "4.0.0"

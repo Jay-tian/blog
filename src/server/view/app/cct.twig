@@ -1,0 +1,39 @@
+{% extends 'layout.twig' %}
+{% set title = '汉字在线转拼音 无境-jay 博客' %}
+{% set bodyClass = 'fullscreen' %}
+{% set description = '汉字在线转拼音，汉字转拼音json，汉字转拼音接口' %}
+{% set keywords = '汉字在线转拼音，汉字，拼音' %}
+{% set scripts = ['/dist/js/characters-trans/index.js'] %}
+{% set styles = ['/dist/css/characters-trans.css'] %} 
+
+{% block main %}
+  <div class="box">
+    <div class="col-sm-4">
+      <div class="title">
+        汉字
+      </div>
+      <div class="content">
+        <div class="value-input-box">
+          <textarea name='value' value="" id="cct" class='value-input' >汉字在线转拼音</textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="title">
+        汉字+拼音
+      </div>
+      <div class="content py-hz">
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="title">
+        汉字+拼音 Json
+      </div>
+      <div class="content js-py">
+        
+      </div>
+    </div>
+  </div>
+{% endblock %}

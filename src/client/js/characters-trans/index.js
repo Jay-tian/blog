@@ -1,0 +1,58 @@
+let pinyin = require('pinyin');
+
+class Py {
+  constructor($element) {
+    this.$element = $element;
+    this.showPy(this.$element.val());
+    this.init();
+  }
+
+  init() {
+    let self = this;
+    this.$element.on('input propertychange', function(){
+      self.showPy();
+    });
+  }
+
+  showPy() {
+    $('.py-hz').html(this.buildHtml()); 
+    $('.js-py').text(JSON.stringify(this.pyJson)); 
+  }
+
+  buildHtml() {
+    let hz = this.$element.val();
+    let pys = pinyin(hz);
+    hz = hz.split('');
+    let hzs = [], hzTmp = '';
+    var re= /^[\u4e00-\u9fa5]+$/;
+    hz.forEach((element) => {
+      if(re.test(element)) {
+        if (hzTmp) {
+          hzs.push(hzTmp);
+          hzTmp = '';
+        }
+        hzs.push(element);
+      } else {
+        hzTmp += element;
+      }
+    }); 
+
+    let pyJson = {};
+
+    let result = '';
+    hzs.forEach((element, index) => {
+      let py = pys[index];
+      let s = `<span>${element}<span class='py'>${py}</span></span>`;
+      result += s;
+      pyJson[index] = {
+        zh: element,
+        py: py
+      };
+    });
+
+    this.pyJson = pyJson;
+    return result;
+  }
+}
+
+new Py($('#cct'));
