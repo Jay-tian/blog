@@ -36,6 +36,10 @@ class Py {
         hzTmp += element;
       }
     }); 
+    if (hzTmp) {
+      hzs.push(hzTmp);
+      hzTmp = '';
+    }
 
     let pyJson = {};
 
@@ -51,6 +55,7 @@ class Py {
     });
 
     this.pyJson = pyJson;
+
     return result;
   }
 }
