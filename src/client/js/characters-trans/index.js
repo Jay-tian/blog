@@ -21,7 +21,11 @@ class Py {
 
   buildHtml() {
     let hz = this.$element.val();
-    let pys = pinyin(hz);
+    let pys = pinyin(hz, {
+      heteronym: true,              // 启用多音字模式
+      segment: true 
+    });
+    console.log(pys);
     hz = hz.split('');
     let hzs = [], hzTmp = '';
     var re= /^[\u4e00-\u9fa5]+$/;
@@ -46,7 +50,10 @@ class Py {
     let result = '';
     hzs.forEach((element, index) => {
       let py = pys[index];
-      let s = `<span>${element}<span class='py'>${py}</span></span>`;
+      let showpy = py.length > 1 ? py[0] + '(多音)' : py[0];
+      let showpys = py.join("／");
+
+      let s = `<span>${element}<span class='py' title= ${showpys} >${showpy}</span></span>`;
       result += s;
       pyJson[index] = {
         zh: element,
