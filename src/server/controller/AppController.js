@@ -15,6 +15,16 @@ class AppController extends BaseController {
       });
     };    
   }
+
+  donwLoadCctJson() {
+    return async (ctx) => {
+      let body = ctx.request.body;
+      ctx.append('Content-Type', 'application/json;charset=utf-8');
+      ctx.body = body;
+
+      return;
+    };  
+  }
 }
 
 module.exports = AppController;

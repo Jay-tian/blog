@@ -12,6 +12,10 @@ class Py {
     this.$element.on('input propertychange', function(){
       self.showPy();
     });
+
+    $('.js-donwload').on('click', function() {
+      
+    });
   }
 
   showPy() {
@@ -51,7 +55,7 @@ class Py {
     hzs.forEach((element, index) => {
       let py = pys[index];
       let showpy = py.length > 1 ? py[0] + '(多音)' : py[0];
-      let showpys = py.join("／");
+      let showpys = py.join('／');
 
       let s = `<span>${element}<span class='py' title= ${showpys} >${showpy}</span></span>`;
       result += s;

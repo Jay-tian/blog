@@ -78,5 +78,9 @@
   "nicknameExist": {
     "path": "/nickname/:nickname/exist",
     "controller": "User"
+  },
+  "donwLoadCctJson": {
+    "path": "/cct/donwload/json",
+    "controller": "App"
   }
 }
