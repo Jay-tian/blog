@@ -18,8 +18,10 @@ class AppController extends BaseController {
 
   donwLoadCctJson() {
     return async (ctx) => {
-      let body = ctx.request.body;
-      ctx.append('Content-Type', 'application/json;charset=utf-8');
+      let body = ctx.request.query.data; 
+      
+      ctx.set('Content-Disposition', 'attachment;filename='+new Date().getTime()+'.json');
+      ctx.set('Content-Type', 'application/json;charset=utf-8');
       ctx.body = body;
 
       return;
