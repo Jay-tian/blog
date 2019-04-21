@@ -14,7 +14,8 @@ class Py {
     });
 
     $('.js-donwload').on('click', function() {
-      window.open($(this).data('url')+'?data='+$('.js-py').text());
+      let data = $($(this).data('target')).text();
+      window.open($(this).data('url')+'?data='+data);
     });
   }
 

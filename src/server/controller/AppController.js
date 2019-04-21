@@ -27,6 +27,18 @@ class AppController extends BaseController {
       return;
     };  
   }
+
+  donwLoadCctText() {
+    return async (ctx) => {
+      let body = ctx.request.query.data; 
+      
+      ctx.set('Content-Disposition', 'attachment;filename='+new Date().getTime()+'.text');
+      ctx.set('Content-Type', 'application/text;charset=utf-8');
+      ctx.body = body;
+
+      return;
+    };  
+  }
 }
 
 module.exports = AppController;

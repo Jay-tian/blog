@@ -82,5 +82,9 @@
   "donwLoadCctJson": {
     "path": "/cct/donwload/json",
     "controller": "App"
+  },
+  "donwLoadCctText": {
+    "path": "/cct/donwload/text",
+    "controller": "App"
   }
 }
