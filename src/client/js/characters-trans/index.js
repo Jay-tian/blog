@@ -7,6 +7,18 @@ class Py {
     this.init();
   }
 
+  ajaxPostLoadFile(url,val) {
+    let $form = $('<form id="downloadform" method="POST" style="display:none"></form>');
+    $form.attr('action', url);
+    let $input = $('<input type="hidden" name="data" />');
+    $input.attr('value', val);
+    $form.append($input);
+    $('body').append($form);
+    $form.submit();
+
+    $form.remove();//移除表单
+  }
+
   init() {
     let self = this;
     this.$element.on('input propertychange', function(){
@@ -14,8 +26,9 @@ class Py {
     });
 
     $('.js-donwload').on('click', function() {
+      
       let data = $($(this).data('target')).text();
-      window.open($(this).data('url')+'?data='+data);
+      self.ajaxPostLoadFile($(this).data('url'), data);
     });
   }
 
@@ -55,6 +68,10 @@ class Py {
     let result = '';
     hzs.forEach((element, index) => {
       let py = pys[index];
+      if (!py) {
+        return;
+      }
+
       let showpy = py.length > 1 ? py[0] + '(多音)' : py[0];
       let showpys = py.join('／');
 

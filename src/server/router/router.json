@@ -81,10 +81,12 @@
   },
   "donwLoadCctJson": {
     "path": "/cct/donwload/json",
-    "controller": "App"
+    "controller": "App",
+    "methods": ["post"]
   },
   "donwLoadCctText": {
     "path": "/cct/donwload/text",
-    "controller": "App"
+    "controller": "App",
+    "methods": ["post"]
   }
 }

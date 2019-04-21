@@ -18,11 +18,9 @@ class AppController extends BaseController {
 
   donwLoadCctJson() {
     return async (ctx) => {
-      let body = ctx.request.query.data; 
-      
+      ctx.body = ctx.request.body.data; 
       ctx.set('Content-Disposition', 'attachment;filename='+new Date().getTime()+'.json');
       ctx.set('Content-Type', 'application/json;charset=utf-8');
-      ctx.body = body;
 
       return;
     };  
@@ -30,11 +28,9 @@ class AppController extends BaseController {
 
   donwLoadCctText() {
     return async (ctx) => {
-      let body = ctx.request.query.data; 
-      
+      ctx.body = ctx.request.body.data; 
       ctx.set('Content-Disposition', 'attachment;filename='+new Date().getTime()+'.text');
       ctx.set('Content-Type', 'application/text;charset=utf-8');
-      ctx.body = body;
 
       return;
     };  
