@@ -1,0 +1,18 @@
+{% extends 'layout.twig' %}
+{% set title = '在线工具, web工具-无境-jay 博客' %}
+{% set description = '在线常用工具,在线查询工具,在线常用转换和在线测试' %}
+{% set keywords = '在线工具，json解析，网页指纹，汉字在线转拼音' %}
+{% set styles = ['/dist/css/app-list.css'] %} 
+{% set bodyClass = 'fullscreen' %}
+{% set apps = {'cct': '汉字在线转拼音', 'json': 'Json解析', 'web_fingerprint': '网页指纹'} %}
+{% block main %}
+  <div class="apps">
+    {% for key, app in apps %}
+    <div class="item">
+      <a href="apps/{{ key }}" target="_blank">
+        {{ app }}
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock %}

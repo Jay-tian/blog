@@ -88,5 +88,15 @@
     "path": "/cct/donwload/text",
     "controller": "App",
     "methods": ["post"]
+  },
+  "test": {
+    "path": "/test",
+    "controller": "Test",
+    "methods": ["get"]
+  },
+  "apps": {
+    "path": "/apps",
+    "controller": "App",
+    "methods": ["get"]
   }
 }

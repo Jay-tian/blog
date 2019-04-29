@@ -1,0 +1,10 @@
+{% extends 'layout.twig' %}
+{% set styles = ['/dist/css/loding.css'] %} 
+{% set bodyClass = 'fullscreen' %}
+{% block main %}
+  <div class="loading">
+    <div class="top"></div>
+    <div class="mid"></div>
+    <div class="bottom"></div>
+  </div>
+{% endblock %}
