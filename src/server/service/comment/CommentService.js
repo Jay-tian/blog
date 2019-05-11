@@ -9,9 +9,17 @@ class CommentService extends BaseService {
     return this.getCurrentDao().create(fields);
   }
 
+  count(condition) {
+    return this.getCurrentDao().count(condition);
+  }
+
   reply(id, fields) {
     fields['replyId'] = id;
     return this.getCurrentDao().create(fields);
+  }
+
+  findBytargetIdAndTargetType(targetId, targetType) {
+    return this.getCurrentDao().findBytargetIdAndTargetType(targetId, targetType);
   }
 
   async delete(id, currentUser) {

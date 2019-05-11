@@ -1,13 +1,15 @@
+{% for comment in comments %}
+{% set commentUser = users[comment.userId]|default() %}
 <div class="comments-item">
   <div class="commens-item-title">
     1楼
     <strong>
-      <a target="_blank" href="/u/jerrytanjinjie">JAY</a>
+      <a target="_blank" href="/u/jerrytanjinjie">{{ commentUser.nickname }}</a>
     </strong>
     <span>23 小时前</span>
   </div>
 
-  <pre class="comments-item-content">评论内容。。。asldfjasdlaksdjf</pre>
+  <pre class="comments-item-content">{{ comment.content }}</pre>
 
   {# <p class="comment-ops">
     <span class="comments-zan ">
@@ -18,24 +20,4 @@
     <span class="ml15 comments-reply-btn">回复</span>
   </p> #}
 </div>
-
-<div class="comments-item">
-  <div class="commens-item-title">
-    2楼
-    <strong>
-      <a target="_blank" href="/u/jerrytanjinjie">JAY</a>
-    </strong>
-    <span>23 小时前</span>
-  </div>
-
-  <pre class="comments-item-content">评论内容。。。asldfjasdlaksdjf</pre>
-
-  {# <p class="comment-ops">
-    <span class="comments-zan ">
-      <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-      <span class="comments-zan-text">赞</span>
-      <span class="comments-zan-value">+1</span>
-    </span>
-    <span class="ml15 comments-reply-btn">回复</span>
-  </p> #}
-</div>
+{% endfor %}

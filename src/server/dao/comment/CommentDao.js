@@ -3,17 +3,26 @@ const Sequelize = require('sequelize');
 
 class CommentDao extends BaseDao {
   constructor(){
-    super('comment');
+    super('comments');
   }
 
-
+  findBytargetIdAndTargetType(targetId, targetType) {
+    return this.model.findAll({
+      where: {
+        targetId: targetId,
+        targetType: targetType,
+      },
+      offset: 0,
+      limit: 10
+    });
+  }
 
   config() {
     return {
       targetId: {
         type: Sequelize.INTEGER,
       },
-      subTittargetTypele: {
+      targetType: {
         type: Sequelize.STRING(32),
       },
       replyId: {
