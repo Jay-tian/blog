@@ -9,7 +9,7 @@
       {% for article in articles %}
         <li id="article-{{article.id}}" class="clearfix">
           <a href="{{url('showArticle', {id: article.id})}}">
-          {{ article.title }}
+            {{ article.title }}
           </a>
           <a class="pull-right manage btn btn-primary" href="{{ url('updateArticle', {id: article.id}) }}">
             编辑

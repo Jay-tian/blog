@@ -12,6 +12,10 @@
       <div class="content markdown-body">
           {{ article.content|default() }}
       </div>
+
+      <div class="comments">
+        {% include 'common/comment/comment.twig' %}
+      </div>
     </div>
     {# <div class="col-md-3">
 
