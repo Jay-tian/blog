@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface) => {
     return queryInterface.sequelize.query(
-      `CREATE TABLE comments IF NOT EXISTS (
+      `CREATE TABLE comments (
         id int(10) NOT NULL AUTO_INCREMENT COMMENT '评论id',
         targetId int(10) NOT NULL COMMENT '评论目标id',
         targetType varchar(32) NOT NULL COMMENT '评论目标类型',
@@ -14,7 +14,7 @@ module.exports = {
         content varchar(512) DEFAULT NULL COMMENT '评论内容',
         createdAt datetime(0)  NOT NULL COMMENT '创建时间',
         updatedAt datetime(0) NOT NULL COMMENT '更新时间',
-        PRIMARY KEY (id),
+        PRIMARY KEY (id)
       ) ENGINE=InnoDB COMMENT='评论主表';
       `
     );
