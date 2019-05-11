@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "aplayer": "^1.10.1",
     "bootstrap": "3",
     "editor.md": "^1.5.0",
     "element-ui": "^2.4.8",

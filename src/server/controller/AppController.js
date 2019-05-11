@@ -9,7 +9,10 @@ class AppController extends BaseController {
   }
 
   apps() {
+
+
     return async (ctx) => {
+
       let code = ctx.params.id;
       return ctx.render(`app/list.twig`, {
       });
@@ -18,7 +21,13 @@ class AppController extends BaseController {
 
   showApp() {
     return async (ctx) => {
+      let adminPermiss = ['music'];
       let code = ctx.params.id;
+      let user = ctx.state.user;
+      if(adminPermiss.indexOf(code) > -1 && !user.isAdmin()) {
+        throw 'forbidden';
+      }
+
       return ctx.render(`app/${code}.twig`, {
       });
     };    

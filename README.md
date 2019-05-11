@@ -2,13 +2,13 @@
 ## 安装
 ```
 yarn
-yarn add nodemon
+yarn global add pm2
 npm run dev
 ``` 
 
 ## 执行数据库脚本
 ```
-yarn add sequelize
+yarn global add sequelize
 sequelize   db:migrate
 ```
 
@@ -33,6 +33,19 @@ server {
 }
 ```
 
+## 安装 ImageMagick
+```
+    安装说明： http://www.imagemagick.org/script/install-source.php
+    wget -c https://imagemagick.org/download/ImageMagick.tar.gz
+    tar xvzf ImageMagick.tar.gz
+    cd 解压目录
+    ./configure
+    make
+    sudo make install
+    sudo ldconfig /usr/local/lib
+    /usr/local/bin/convert logo: logo.gif
+```
+
 1. 个人主页
 3. redis
 5. 估点扑克
@@ -52,3 +65,4 @@ server {
 22. 压力测试
 23. lodash
 24. 定时任务
+25. 音频播放：防止下载，ui

@@ -16,6 +16,7 @@
     z-index: -1;
     bottom: 0;
     animation: bottom 3s infinite;
+    display: none;
   }
 
   .mid {
@@ -25,7 +26,7 @@
     margin: 0 auto;
     position: absolute;
     bottom: 15px;
-    animation: mid 3s infinite;
+    animation: mid 1.5s infinite;
     transition-timing-function: ease;
   }
 
@@ -38,6 +39,7 @@
     position: absolute;
     bottom: 75px;
     animation: top 3s infinite;
+    display: none;
   }
 
   @keyframes mid {
@@ -48,10 +50,11 @@
       bottom: 15px;
     }
 
-    3% {
+    22% {
       left: 100px;
       width: 100px;
       height: 100px;
+      bottom: 15px;
       transform: rotate(0deg);
     }
 
@@ -59,19 +62,24 @@
       left: 100px;
       width: 100px;
       height: 100px;
-      bottom: 120px;
+      bottom: 200px;
+      transform: rotate(0deg);
     }
 
-    90% {
-      bottom: 25px;
-    }
-
-    97% {
-      transform: rotate(180deg);
-      bottom: 15px;
+    88% {
       left: 100px;
       width: 100px;
       height: 100px;
+      bottom: 15px;
+      transform: rotate(0deg);
+    }
+
+    90% {
+      left: 100px;
+      width: 100px;
+      height: 100px;
+      bottom: 15px;
+      transform: rotate(0deg);
     }
 
     100% {
@@ -79,7 +87,6 @@
       height: 60px;
       left: 0;
       bottom: 15px;
-      transform: rotate(180deg);
     }
   }
 
