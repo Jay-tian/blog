@@ -14,7 +14,10 @@
       </div>
 
       <div class="comments">
-        {% include 'common/comment/comment.twig' %}
+        {% include 'common/comment/comment.twig'  with {
+          targetId: 1,
+          targetType: 'article'
+        } %}
       </div>
     </div>
     {# <div class="col-md-3">
