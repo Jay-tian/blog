@@ -13,17 +13,12 @@
     </span>
   </div>
 
-  <pre class="comments-item-content">
-    {{ comment.content }}
-  </pre>
+  <pre class="comments-item-content">{{ comment.content }}</pre>
+  <p class="comment-ops">
+    <span class="">点赞</span>
+    <span class="">回复</span>
+  </p>
 
-  {# <p class="comment-ops">
-    <span class="comments-zan ">
-      <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-      <span class="comments-zan-text">赞</span>
-      <span class="comments-zan-value">+1</span>
-    </span>
-    <span class="ml15 comments-reply-btn">回复</span>
-  </p> #}
+  {% include 'comment-reply.twig' %}
 </div>
 {% endfor %}
