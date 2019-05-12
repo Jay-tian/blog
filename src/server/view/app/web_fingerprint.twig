@@ -3,7 +3,7 @@
 {% set title = 'web水印 无境-jay 博客' %}
 {% set description = 'web水印' %}
 {% set keywords = 'fingerprint,web水印,水印, web指纹' %}
-{% set scripts = ['/dist/js/fingerprint/index.js'] %}
+{{ scripts(scriptList, {0: ['/dist/js/fingerprint/index.js']}) }}
 {% set styles = ['/dist/css/json-decode.css'] %} 
 
 {% block main %}

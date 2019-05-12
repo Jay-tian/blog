@@ -1,7 +1,8 @@
 {% extends 'layout.twig' %}
 {% set title =  article.title %}
 {% set styles = ['/dist/css/article-show.css'] %}
-{% set scripts = ['/dist/js/article/show/index.js'] %} 
+{{ scripts(scriptList, {0: ['/dist/js/article/show/index.js']}) }}
+
 {% block main %}
   
   <div class="article-main main container">

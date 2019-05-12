@@ -3,7 +3,8 @@
 {% set bodyClass = 'fullscreen' %}
 {% set description = '汉字在线转拼音，汉字转拼音json，汉字转拼音接口' %}
 {% set keywords = '汉字在线转拼音，汉字，拼音' %}
-{% set scripts = ['/dist/js/characters-trans/index.js'] %}
+{{ scripts(scriptList, {0: ['/dist/js/characters-trans/index.js']}) }}
+
 {% set styles = ['/dist/css/characters-trans.css'] %} 
 
 {% block main %}
