@@ -2,14 +2,18 @@
 {% set commentUser = users[comment.userId]|default() %}
 <div class="comments-item">
   <div class="commens-item-title">
-    1楼
+    {{ comment.id }}楼
     <strong>
-      <a target="_blank" href="/u/jerrytanjinjie">{{ commentUser.nickname }}</a>
+      <a target="_blank" href="javascript:;">
+        {{ commentUser.nickname }}
+      </a>
     </strong>
     <span>23 小时前</span>
   </div>
 
-  <pre class="comments-item-content">{{ comment.content }}</pre>
+  <pre class="comments-item-content">
+    {{ comment.content }}
+  </pre>
 
   {# <p class="comment-ops">
     <span class="comments-zan ">
