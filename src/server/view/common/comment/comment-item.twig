@@ -8,7 +8,9 @@
         {{ commentUser.nickname }}
       </a>
     </strong>
-    <span>23 小时前</span>
+    <span>
+      {{ comment.createdAt|timeDate2str }}
+    </span>
   </div>
 
   <pre class="comments-item-content">
