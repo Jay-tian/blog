@@ -8,15 +8,15 @@
         {{ commentUser.nickname }}
       </a>
     </strong>
-    <span>
-      {{ comment.createdAt|timeDate2str }}
+    <span class="comment-time">
+      · {{ comment.createdAt|timeDate2str }}
     </span>
   </div>
 
   <pre class="comments-item-content">{{ comment.content }}</pre>
   <p class="comment-ops">
-    <span class="">点赞</span>
-    <span class="">回复</span>
+    <a class="" href="javascript:;">点赞</a>
+    <a class="" href="javascript:;">回复</a>
   </p>
 
   {% include 'comment-reply.twig' %}
