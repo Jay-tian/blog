@@ -26,8 +26,8 @@
     <input name="targetType" type="hidden" value="article">
   </form>
   {% if comment.replyId %}
-    {% set replay = replay[comment.replyId] %}
-    {% include 'comment-reply.twig' with {replay: replay}%}
+    {% set reply = replys[comment.replyId] %}
+    {% include 'comment-reply.twig' with {reply: reply}%}
   {% endif %}
 </div>
 {% endfor %}

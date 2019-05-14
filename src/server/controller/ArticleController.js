@@ -84,7 +84,8 @@ class DefaultController extends BaseController {
         50
       );
 
-      let replyIds = toolkit.arrayColumn(comments, 'replayId');
+
+      let replyIds = toolkit.arrayColumn(comments, 'replyId', 'dataValues');
       let replys = await this.commentService().findByIds(replyIds);
 
       let commentUserIds = toolkit.arrayColumn(comments, 'userId');
