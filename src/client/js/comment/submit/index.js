@@ -3,6 +3,12 @@ $('#reply').on('click', function () {
   $('.reply-form').removeAttr('style');
 });
 
+$('.js-delete-reply').on('click', function(){
+  $('.reply-target').addClass('hide');
+  $('#replyId').val(0);
+});
+
+
 
 // $('#register').validate({
 //   rules: {
