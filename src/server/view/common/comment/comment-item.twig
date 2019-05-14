@@ -7,17 +7,16 @@
       <a target="_blank" href="javascript:;">
         {{ commentUser.nickname }}
       </a>
-    </strong>
-    <span class="comment-time">
-      · {{ comment.createdAt|timeDate2str }}
-    </span>
-  </div>
-
-  <pre class="comments-item-content">{{ comment.content }}</pre>
-  <p class="comment-ops">
-    <a class="" href="javascript:;">点赞</a>
-    <a class="" href="javascript:;">回复</a>
+ id="{{ comment.id }}">回复</a>
   </p>
+  <form class="reply-form" data-id="{{ comment.id }}" style="display: none;" action="{{ url('createComment', {targetId: article.id, targetType: 'article',replyId: comment.id}) }}" method="POST">
+    <textarea name="content" rows="3" class="form-control" placeholder="文明社会，理性评论"></textarea>
+    <div>
+      <button class="js-comment-btn btn btn-primary pull-right mt2" type="submit">回复</button>
+    </div>
+    <input name="targetId" type="hidden" value="{{ article.id }}">
+    <input name="targetType" type="hidden" value="article">
+  </form>
 
   {% include 'comment-reply.twig' %}
 </div>

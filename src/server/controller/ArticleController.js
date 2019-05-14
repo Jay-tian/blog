@@ -77,7 +77,18 @@ class DefaultController extends BaseController {
       }
 
       let targetId = ctx.params.id;
-      let comments = await this.commentService().findBytargetIdAndTargetType(targetId, 'article');
+      let comments = await this.commentService().search(
+        {targetId: targetId, targetType: 'article', replyId: 0},
+        [['createdAt', 'ASC']],
+        0,
+        50
+      );
+      let replys = await this.commentService().search(
+        {targetType: 'article', replyId: 1},
+        [['createdAt', 'ASC']],
+        0,
+        50
+      );
       let userIds = toolkit.arrayColumn(comments, 'userId');
       let users = await this.getUserService().findByIds(userIds);
       users = mytoolkit.index(users, 'id');
