@@ -78,24 +78,27 @@ class DefaultController extends BaseController {
 
       let targetId = ctx.params.id;
       let comments = await this.commentService().search(
-        {targetId: targetId, targetType: 'article', replyId: 0},
-        [['createdAt', 'ASC']],
+        {targetId: targetId, targetType: 'article'},
+        [['createdAt', 'DESC']],
         0,
         50
       );
-      let replys = await this.commentService().search(
-        {targetType: 'article', replyId: 1},
-        [['createdAt', 'ASC']],
-        0,
-        50
-      );
-      let userIds = toolkit.arrayColumn(comments, 'userId');
+
+      let replyIds = toolkit.arrayColumn(comments, 'replayId');
+      let replys = await this.commentService().findByIds(replyIds);
+
+      let commentUserIds = toolkit.arrayColumn(comments, 'userId');
+      let commentReplyUserIds = toolkit.arrayColumn(replys, 'userId');
+
+      let userIds = commentUserIds.concat(commentReplyUserIds);
       let users = await this.getUserService().findByIds(userIds);
       users = mytoolkit.index(users, 'id');
+      replys = mytoolkit.index(replys, 'id');
 
       return ctx.render('article/show.twig', {
         article: article,
         comments: comments,
+        replys: replys,
         users: users,
       });
     };
