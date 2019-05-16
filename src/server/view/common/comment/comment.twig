@@ -2,7 +2,7 @@
 
 <div id="comments-action" class="comments-action clearfix">
   <div class="comments-box-content">
-    <p class="reply-target mb1"> 
+    <p class="reply-target mb1 hide"> 
       @<span class="reply-target-content">1楼</span> <span class="js-delete-reply iconfont icon-close-circle"></span>
     </p>
     <form action="{{ url('createComment', {targetId: article.id, targetType: 'article'}) }}" method="POST">

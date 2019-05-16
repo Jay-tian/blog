@@ -8,8 +8,11 @@ $('.js-delete-reply').on('click', function(){
   $('#replyId').val(0);
 });
 
-
-
+$('body').on('click', '.js-reply-btn', function(){
+  let id = $(this).data('id');
+  $('.reply-target').removeClass('hide').find('.reply-target-content').text(id+'楼');
+  $('#replyId').val(id);
+});
 // $('#register').validate({
 //   rules: {
 //     nickname: {
