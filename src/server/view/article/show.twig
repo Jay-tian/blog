@@ -1,7 +1,8 @@
 {% extends 'layout.twig' %}
 {% set title =  article.title %}
 {% set styles = ['/dist/css/article-show.css'] %}
-{% set scripts = ['/dist/js/article/show/index.js'] %} 
+{{ scripts(scriptList, {0: ['/dist/js/article/show/index.js']}) }}
+
 {% block main %}
   
   <div class="article-main main container">
@@ -11,6 +12,13 @@
       </h1>
       <div class="content markdown-body">
           {{ article.content|default() }}
+      </div>
+
+      <div class="comments">
+        {% include 'common/comment/comment.twig'  with {
+          targetId: 1,
+          targetType: 'article'
+        } %}
       </div>
     </div>
     {# <div class="col-md-3">

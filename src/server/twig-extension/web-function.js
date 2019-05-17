@@ -15,5 +15,17 @@ module.exports = {
     } catch (error) {
       return rootPath + url;
     }
+  },
+  scripts: function(list, targets) {   
+    let keys = targets['_keys'];
+
+    for(let i = 0; i < keys.length; i++ ) {
+      if (undefined != targets[keys[i]]) {
+        list[keys[i]] = typeof(targets[keys[i]]) == 'string' ? [targets[keys[i]]] : targets[keys[i]];
+      } else {
+        let item = typeof(targets[keys[i]]) == 'string' ? [targets[keys[i]]] : targets[keys[i]];
+        list[keys[i]] = list[keys[i]].concat(item);
+      }
+    }
   }
 };

@@ -40,8 +40,10 @@
   <script>
     window.app.imageUploadUrl = "{{ url('imageUpload') }}";
   </script>
-  {% for script in scripts|default('') %}
-    <script src="{{ asset(script) }}"> </script>
+  {% for scripts in scriptList|default('') %}
+    {% for script in scripts  %}
+      <script src="{{ asset(script) }}"> </script> 
+    {% endfor %}
   {% endfor %}
   <script>
     var _hmt = _hmt || [];

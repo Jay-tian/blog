@@ -3,7 +3,7 @@
 {% set title = '炉石模拟器' %}
 {% set description = '炉石模拟器， 炉石' %}
 {% set keywords = '炉石，炉石模拟器' %}
-{% set scripts = ['/dist/js/hearthstone/index.js'] %}
+{{ scripts(scriptList, {0: ['/dist/js/hearthstone/index.js']}) }}
 {% set styles = ['/dist/css/hearthstone.css'] %} 
 
 {% block body %}

@@ -1,6 +1,7 @@
 const BaseController = require('koa-symphony/src/controller/BaseController');
 const toolkitWeb = require('koa-symphony/src/toolkit/web.js');
 const toolkit = require('koa-symphony/src/toolkit/index.js');
+const mytoolkit = require('../toolkit/Toolkit');
 
 class DefaultController extends BaseController {
   constructor(){
@@ -74,8 +75,32 @@ class DefaultController extends BaseController {
       if (ctx.state.user.getUserId() != article['userId']) {
         this.articelService().incrementHits(ctx.params.id);
       }
+
+      let targetId = ctx.params.id;
+      let comments = await this.commentService().search(
+        {targetId: targetId, targetType: 'article'},
+        [['createdAt', 'DESC']],
+        0,
+        50
+      );
+
+
+      let replyIds = toolkit.arrayColumn(comments, 'replyId', 'dataValues');
+      let replys = await this.commentService().findByIds(replyIds);
+
+      let commentUserIds = toolkit.arrayColumn(comments, 'userId');
+      let commentReplyUserIds = toolkit.arrayColumn(replys, 'userId');
+
+      let userIds = commentUserIds.concat(commentReplyUserIds);
+      let users = await this.getUserService().findByIds(userIds);
+      users = mytoolkit.index(users, 'id');
+      replys = mytoolkit.index(replys, 'id');
+
       return ctx.render('article/show.twig', {
         article: article,
+        comments: comments,
+        replys: replys,
+        users: users,
       });
     };
   }
@@ -128,6 +153,10 @@ class DefaultController extends BaseController {
 
   articelService() {
     return this.createService('article/ArticleService');
+  }
+
+  commentService() {
+    return this.createService('comment/CommentService');
   }
 }
 

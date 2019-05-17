@@ -88,5 +88,10 @@
     "path": "/cct/donwload/text",
     "controller": "App",
     "methods": ["post"]
+  },
+  "createComment": {
+    "path": "/target/:targetType/:targetId/comment/create",
+    "controller": "Comment",
+    "methods": ["post"]
   }
 }
