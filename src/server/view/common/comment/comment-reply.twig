@@ -1,5 +1,6 @@
 <div class="replay-target">
-  <pre class="">{{ reply.content }}</pre>
+  {% include 'comment-user.twig' with {nickname: replyUser.nickname, comment: reply} %}
+  <pre>{{ reply.content }}</pre>
   <p class="comment-ops">
     {# <a class="" href="javascript:;">点赞</a> #}
     <a class="grey js-reply-btn"  data-id="{{ reply.id }}" href="javascript:;">回复</a>

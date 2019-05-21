@@ -12,6 +12,7 @@ $('body').on('click', '.js-reply-btn', function(){
   let id = $(this).data('id');
   $('.reply-target').removeClass('hide').find('.reply-target-content').text(id+'楼');
   $('#replyId').val(id);
+  location.href = '#comments-action'; 
 });
 // $('#register').validate({
 //   rules: {
