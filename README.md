@@ -8,7 +8,7 @@ npm run dev
 
 ## 执行数据库脚本
 ```
-yarn add sequelize
+npm install -g sequelize-cli
 sequelize   db:migrate
 ```
 
