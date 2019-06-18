@@ -15,7 +15,7 @@ module.exports = {
     secureConnection: true,
     auth: {
       user: '806338233@qq.com',
-      pass: '**********',
+      pass: 'ceuxoiewkxqtbcgf',
     }
   }
 };
