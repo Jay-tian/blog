@@ -19,7 +19,7 @@ server {
 
     location ~ ^/dist/* {
         if (-f /var/www/blog/dev.lock){
-          proxy_pass http://127.0.0.1:8020;
+          proxy_pass http://127.0.0.1:8082;
         }
      }
 
