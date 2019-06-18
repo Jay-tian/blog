@@ -5,6 +5,6 @@ public/.DS_Store
 .DS_Store
 /webpack-cache
 /public/data
-config/*
+# config/*
 config/db.json
 nodemon.json
