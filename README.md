@@ -12,6 +12,16 @@ npm install -g sequelize-cli
 sequelize   db:migrate
 ```
 
+## 系统目录
+```
+
+cd public/
+mkdir data/
+cd data/
+mkdir images
+mkdir files
+```
+
 ## nginx 配置
 ```
 server {

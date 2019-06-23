@@ -15,5 +15,9 @@
     "path": "/article/unpublish/:id",
     "controller": "Article",
     "methods": ["post"]
+  },
+  "userManage": {
+    "path": "/user/manage",
+    "controller": "AdminUser"
   }
 }

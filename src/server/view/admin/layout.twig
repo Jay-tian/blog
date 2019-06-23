@@ -23,11 +23,11 @@
 {% block body %}
   <div class="admin-toobar">
     <ul class="">
-      <li class="active">
-        <a href="/admin/article/manage">文章管理</a>
+      <li {% if tab == 'article' %}class="active"{% endif %}>
+        <a href="/admin">文章管理</a>
       </li>
-      <li>
-        <a href="/admin/user/manage">用户管理</a>
+      <li {% if tab == 'user' %}class="active"{% endif %}>
+        <a href="{{ url('userManage') }}">用户管理</a>
       </li>
     </ul>
   </div>
