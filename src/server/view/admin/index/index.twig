@@ -1,5 +1,6 @@
 {% extends 'admin/layout.twig' %}
 {{ scripts(scriptList, {0: ['/dist/js/admin/article/index.js']}) }}
+{% set tab = 'article' %}
 
 {% block main %}
   <table class="table table-striped">
