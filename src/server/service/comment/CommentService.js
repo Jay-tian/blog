@@ -5,7 +5,18 @@ class CommentService extends BaseService {
     super();
   }
 
-  create(fields) {
+  async create(fields) {
+    if (fields['replyId'] != 0) {
+      let reply = await this.getCurrentDao().getById(fields.replyId);
+      let lastReplyFloor = await this.getCurrentDao().getLastReplyFloor(fields.targetId, fields.targetType, fields.replyId);
+      fields['replyFloor'] = lastReplyFloor ? lastReplyFloor['replyFloor'] : 1;
+      fields['floor'] =  reply['floor'];
+    } else {
+      let lastFloor = await this.getCurrentDao().getLastFloor(fields.targetId, fields.targetType);
+      fields['replyFloor'] = 0;
+      fields['floor'] =  lastFloor ? lastFloor[0]['floor'] + 1 : 1;
+    }
+
     return this.getCurrentDao().create(fields);
   }
 

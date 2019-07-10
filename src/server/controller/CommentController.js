@@ -16,7 +16,8 @@ class Commentontroller extends BaseController {
       if ('POST' == ctx.request.method) {
         let body = ctx.request.body;
         body.userId = ctx.state.user.getUserId();
-        let comment = await this.commentService().create(ctx.request.body);
+        body = toolkit.objectParts(body, ['content', 'targetId', 'targetType', 'replyId', 'userId', 'replyFloor']);
+        let comment = await this.commentService().create(body);
         let url = toolkitWeb.urlGenerater('showArticle', { id: comment.targetId });
         ctx.redirect(url);
         return;

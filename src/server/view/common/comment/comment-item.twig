@@ -5,7 +5,7 @@
   <pre class="comments-item-content">{{ comment.content }}</pre>
   <p class="comment-ops">
     {# <a class="" href="javascript:;">点赞</a> #}
-    <a class="grey js-reply-btn"  data-id="{{ comment.id }}">回复</a>
+    {# <a class="grey btn js-reply-btn"  data-id="{{ comment.id }}" data-floor="{{ comment.floor }}">回复</a> #}
   </p>
   {% if comment.replyId %}
     {% set reply = replys[comment.replyId] %}

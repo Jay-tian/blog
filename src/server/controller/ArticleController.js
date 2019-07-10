@@ -78,7 +78,7 @@ class DefaultController extends BaseController {
 
       let targetId = ctx.params.id;
       let comments = await this.commentService().search(
-        {targetId: targetId, targetType: 'article'},
+        {targetId: targetId, targetType: 'article', replyFloor: 0},
         [['createdAt', 'DESC']],
         0,
         50
