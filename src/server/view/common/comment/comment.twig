@@ -8,7 +8,7 @@
     <form action="{{ url('createComment', {targetId: article.id, targetType: 'article'}) }}" method="POST">
       <textarea name="content" rows="3" class="form-control" placeholder="文明社会，理性评论"></textarea>
       <div>
-        <button class="js-comment-btn btn btn-primary pull-right mt2" type="submit">发布评论</button>
+        <button class="js-comment-btn btn btn-primary pull-right mt2" type="submit">评论</button>
       </div>
       <input name="targetId" type="hidden" value="{{ article.id }}">
       <input name="targetType" type="hidden" value="article">

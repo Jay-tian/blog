@@ -13,14 +13,19 @@
       <div class="content markdown-body">
           {{ article.content|default() }}
       </div>
-
+  {% set t =  findComments(1, 1) %}
       <div class="comments">
         {% include 'common/comment/comment.twig'  with {
           targetId: 1,
-          targetType: 'article'
+          targetType: 'article',
+          comments: t.comments,
+
         } %}
       </div>
     </div>
+    {% set t =  findComments(1, 1) %}
+    
+    {# {{ dump(t) }} #}
     {# <div class="col-md-3">
 
     </div> #}

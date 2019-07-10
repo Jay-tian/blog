@@ -12,7 +12,7 @@ class CommentDao extends BaseDao {
   }
 
   getLastReplyFloor(targetId, targetType, replyId) {
-    return this.db.query('select * from comments where targetId = ? and targetType = ? and replyId = ? order by floor desc limit 1',
+    return this.db.query('select * from comments where targetId = ? and targetType = ? and replyId = ? order by replyFloor desc limit 1',
     {replacements: [targetId, targetType, replyId], type: this.db.QueryTypes.SELECT});
   }
 
