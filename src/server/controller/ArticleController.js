@@ -98,9 +98,6 @@ class DefaultController extends BaseController {
 
       return ctx.render('article/show.twig', {
         article: article,
-        comments: comments,
-        replys: replys,
-      //  users: users,
       });
     };
   }
