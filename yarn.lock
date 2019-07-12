@@ -6289,9 +6289,10 @@ koa-static-cache@^5.1.2:
     mime-types "^2.1.8"
     mz "^2.7.0"
 
-koa-symphony@1.0.29:
-  version "1.0.29"
-  resolved "https://registry.npmjs.org/koa-symphony/-/koa-symphony-1.0.29.tgz#4bfb698224c60bfb5b681aa9ac33f211d763aaa2"
+koa-symphony@1.0.30:
+  version "1.0.30"
+  resolved "https://registry.yarnpkg.com/koa-symphony/-/koa-symphony-1.0.30.tgz#af989f61ab35b9970cb02839c8fd54d429afd261"
+  integrity sha512-DmbaXDxU/IFYyyDLl8NnikW2O8lG0+KayJBZvwxZY0BCwMZsT8FE8pzzHPc5ycsOgBgYRneNYG3831cfqADToQ==
   dependencies:
     glob "^7.1.3"
     gm "^1.23.1"
@@ -6305,7 +6306,7 @@ koa-symphony@1.0.29:
     nodemailer "^4.6.8"
     sequelize "^4.37.6"
     string-random "^0.1.0"
-    tsj-koa-views "^6.1.4"
+    tsj-koa-views "^6.1.5"
     twig "^1.11.0"
 
 koa-websocket@^5.0.1:
@@ -10528,9 +10529,10 @@ tryer@^1.0.0:
   version "1.0.1"
   resolved "https://registry.npmjs.org/tryer/-/tryer-1.0.1.tgz#f2c85406800b9b0f74c9f7465b81eaad241252f8"
 
-tsj-consolidate@^0.15.0:
-  version "0.15.1"
-  resolved "https://registry.npmjs.org/tsj-consolidate/-/tsj-consolidate-0.15.1.tgz#0f07664c793077a6e8c99b2fdd18647bebf557e7"
+tsj-consolidate@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/tsj-consolidate/-/tsj-consolidate-1.0.0.tgz#8c2facb5ee2a42b7972df4cf0a5fc63b8ba6517e"
+  integrity sha512-fqgeN7pf1zE2SQAfP76TOpRC1RQVSPJLuj+EveCFRzXf0uGdAnv04m+xFzS3VzlU4eOYFMBD9yJVNX0X08WrtA==
   dependencies:
     bluebird "^3.1.1"
 
@@ -10538,16 +10540,17 @@ tsj-jcrop@1.0.2:
   version "1.0.2"
   resolved "https://registry.npmjs.org/tsj-jcrop/-/tsj-jcrop-1.0.2.tgz#6a89070d35d70664adb11d99c826545ed29f9674"
 
-tsj-koa-views@^6.1.4:
-  version "6.1.4"
-  resolved "https://registry.npmjs.org/tsj-koa-views/-/tsj-koa-views-6.1.4.tgz#4f9b983a9fac7c5c2d28f9567dee5fab9f1db3af"
+tsj-koa-views@^6.1.5:
+  version "6.1.5"
+  resolved "https://registry.yarnpkg.com/tsj-koa-views/-/tsj-koa-views-6.1.5.tgz#fe9b727d1c512ec39a8a9ca9635ce57946377dc1"
+  integrity sha512-nHTlGOv1plB1b45ANGy24EMqQWB5ZjDdbulfMB+ur5H2N3F9StVqPxYCO/y/sbXgY7j0CRrzbxUjTzn46WGwCQ==
   dependencies:
     debug "^3.1.0"
     get-paths "^0.0.2"
     koa-send "^4.0.0"
     mz "^2.4.0"
     pretty "^2.0.0"
-    tsj-consolidate "^0.15.0"
+    tsj-consolidate "^1.0.0"
 
 tslib@^1.9.0:
   version "1.9.3"
