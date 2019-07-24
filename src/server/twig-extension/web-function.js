@@ -1,8 +1,12 @@
 let parameters = require('koa-symphony/src/loader/ConfigLoader.js');
 const webpackConfig = require(parameters.rootPath+'/webpack/setting.js');
 const assets = 'production' == parameters.env ? require(webpackConfig.output+'webpack.assets.json') : {};
+const Pagination = require('../toolkit/Pagination');
 
 module.exports = {
+  pagination: function(query, pathName, Allcount) {
+    return new Pagination(query, pathName, Allcount);
+  },
   asset: function(url) {
     if ('development' == parameters.env) {
       return url;

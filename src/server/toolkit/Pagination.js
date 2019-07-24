@@ -15,11 +15,13 @@ class Pagination {
   getUrl(page = 1) {
     let query = { ... this.query };
     query.page = page;
+    delete query._keys;
+
     return this.path + '?' + this.querystring.stringify(query);
   }
 
   getPages() {
-    let pages = [], startPage = this.query.page - 3;
+    let pages = [], startPage = this.getCurrentPage() - 3;
     let allPages = Math.ceil(this.allCount / this.pageCount);
     for(let i = 1;i< this.interval * 2;i++) {
       startPage += 1;
@@ -32,7 +34,7 @@ class Pagination {
   }
 
   getCurrentPage() {
-    return this.query.page;
+    return this.query.page ? this.query.page : 1;
   }
 
   getNextPage() {

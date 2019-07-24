@@ -13,14 +13,10 @@
       <div class="content markdown-body">
           {{ article.content|default() }}
       </div>
-
-      {% set commentData =  findComments(article.id, 'article') %}
       <div class="comments">
         {% include 'common/comment/comment.twig'  with {
           targetId: 1,
-          targetType: 'article',
-          comments: commentData.comments,
-          users: commentData.users
+          targetType: 'article'
         } %}
       </div>
     </div>

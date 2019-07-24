@@ -25,6 +25,18 @@ class Commentontroller extends BaseController {
     };
   }
 
+  commentList() {
+    return async (ctx) => {
+      let query = ctx.request.query;
+
+      return ctx.render('common/comment/comment-item.twig', {
+        targetId: query.targetId,
+        targetType: 'article',
+        page: query.page,
+      });
+    }
+  }
+
   userService() {
     return this.createService('user/UserService');
   }

@@ -93,5 +93,9 @@
     "path": "/target/:targetType/:targetId/comment/create",
     "controller": "Comment",
     "methods": ["post"]
+  },
+  "commentList": {
+    "path": "/comment/list",
+    "controller": "Comment"
   }
 }

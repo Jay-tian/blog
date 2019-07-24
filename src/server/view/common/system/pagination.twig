@@ -1,7 +1,6 @@
 {% if pagination.isShow %}
-  <nav aria-label="Page navigation" class="text-center">
+  <nav aria-label="Page navigation" class="text-center js-page-nav" data-async="{{ async|default(0) }}", data-box="{{ box|default() }}">
     <ul class="pagination">
-    
       {% if pagination.getPrePage > 0 %}
         <li>
           <a href="#" aria-label="Previous">

@@ -17,4 +17,4 @@
   </div>
 </div>
 
-{% include 'comment-item.twig'  %}
+{% include 'root::common/comment/comment-item.twig' with {targetId: targetId, targetType: targetType} %}
