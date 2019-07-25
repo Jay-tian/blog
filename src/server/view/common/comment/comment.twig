@@ -8,7 +8,11 @@
     <form id="comment-form" action="{{ url('createComment', {targetId: article.id, targetType: 'article'}) }}" method="POST">
       <textarea name="content" rows="3" class="form-control" placeholder="文明社会，理性评论"></textarea>
       <div>
+         {% if user.isLogin() %}
         <button class="js-comment-btn btn btn-primary pull-right mt2" type="submit">评论</button>
+        {% else %}
+        <a class="btn btn-primary pull-right mt2" href="{{ url('login') }}">登陆评论</a>
+        {% endif %}
       </div>
       <input name="targetId" type="hidden" value="{{ article.id }}">
       <input name="targetType" type="hidden" value="article">
