@@ -21,5 +21,5 @@
   </div>
 </div>
 <div class="comment-list">
-  {% include 'root::common/comment/comment-item.twig' with {targetId: targetId, targetType: targetType} %}
+  {% include 'root::common/comment/comment-item.twig' with {targetId: article.id, targetType: 'article'} %}
 </div>
