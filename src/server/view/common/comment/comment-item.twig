@@ -1,9 +1,10 @@
-{% set commentData =  findComments(article.id, 'article') %}
+{% set commentData =  findComments(targetId, 'article', page) %}
+{% set commentCount = countComments(targetId, 'article') %}
 <div class="comment-list">
   {% for comment in commentData.comments %}
   {% set commentUser = commentData.users[comment.userId]|default() %}
   <div class="comments-item">
-    {% include 'comment-user.twig' with {nickname: commentUser.nickname, comment: comment} %}
+    {% include 'root::common/comment/comment-user.twig' with {nickname: commentUser.nickname, comment: comment} %}
     <pre class="comments-item-content">{{ comment.content }}</pre>
     <p class="comment-ops">
       {# <a class="" href="javascript:;">点赞</a> #}
@@ -17,6 +18,6 @@
   </div>
   {% endfor %}
 
-  {% set pagination = pagination({targetId: targetId, targetType: targetType}, 'commentList', 1000) %}
-  {% include 'root::common/system/pagination.twig' with {pagination: pagination, async: true, box: 'comment-list'} %}
+  {% set pagination = pagination({targetId: targetId, targetType: targetType, page: page}, 'commentList', commentCount) %}
+  {% include 'root::common/system/pagination.twig' with {pagination: pagination, async: true, box: '.comment-list'} %}
 </div>

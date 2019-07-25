@@ -6,13 +6,13 @@ const createService = function(name) {
 };
 
 module.exports = {
-    findComments: async function(targetId, targetType, start = 0, limit = 20, replyId = 0) {
+    findComments: async function(targetId, targetType, startPage = 1, replyId = 0, limit = 20) {
         let commentService = createService('comment/CommentService');
         let userService = createService('user/UserService');
         let comments = await commentService.search(
-            {targetId: targetId, targetType: 'article', replyId: replyId },
+            {targetId: targetId, targetType: targetType, replyId: replyId },
             [['createdAt', 'DESC']],
-            start,
+            (startPage - 1) * limit,
             limit
         );
 
@@ -24,5 +24,11 @@ module.exports = {
             comments: comments,
             users: users,
         }
+    },
+    countComments:  async function(targetId, targetType) {
+        let commentService = createService('comment/CommentService');
+        return await commentService.count(
+            {targetId: targetId, targetType: targetType},
+        );
     }
 };

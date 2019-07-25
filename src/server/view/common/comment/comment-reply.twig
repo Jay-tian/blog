@@ -1,5 +1,5 @@
 <div class="replay-target">
-  {% include 'comment-user.twig' with {nickname: replyUser.nickname, comment: reply} %}
+  {% include 'root::common/comment/comment-user.twig' with {nickname: replyUser.nickname, comment: reply} %}
   <pre>{{ reply.content }}</pre>
   <p class="comment-ops">
     {# <a class="" href="javascript:;">点赞</a> #}

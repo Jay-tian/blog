@@ -15,7 +15,7 @@
       {% endfor %}
       {% if pagination.getNextPage > 0 %}
         <li>
-          <a href="#" aria-label="Next">
+          <a href="{{ pagination.getUrl(pagination.getNextPage) }}" aria-label="Next">
             <span aria-hidden="true">&raquo;</span>
           </a>
         </li>
