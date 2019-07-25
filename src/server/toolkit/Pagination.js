@@ -1,7 +1,11 @@
+
+const webToolkit = require('koa-symphony/src/toolkit/web.js');
+
 let paginationCount = 20;
 class Pagination {
-  constructor(request, allCount, pageCount = paginationCount) {
-    this.request = request;
+  constructor(query, pathName, allCount, pageCount = paginationCount) {
+    this.query = query;
+    this.path = webToolkit.urlGenerater(pathName);
     this.allCount = allCount;
     this.pageCount = pageCount;
     this.querystring = require('querystring');
@@ -9,13 +13,15 @@ class Pagination {
   }
 
   getUrl(page = 1) {
-    let query = { ... this.request.query };
+    let query = { ... this.query };
     query.page = page;
-    return this.request.protocol +'://'+ this.request.header.host + this.request.path + '?' + this.querystring.stringify(query);
+    delete query._keys;
+
+    return this.path + '?' + this.querystring.stringify(query);
   }
 
   getPages() {
-    let pages = [], startPage = this.request.query.page - 3;
+    let pages = [], startPage = this.getCurrentPage() - 3;
     let allPages = Math.ceil(this.allCount / this.pageCount);
     for(let i = 1;i< this.interval * 2;i++) {
       startPage += 1;
@@ -25,11 +31,10 @@ class Pagination {
     }
 
     return pages;
-    
   }
 
   getCurrentPage() {
-    return this.request.query.page;
+    return this.query.page ? parseInt(this.query.page) : 1;
   }
 
   getNextPage() {

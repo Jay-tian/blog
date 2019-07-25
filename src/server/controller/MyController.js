@@ -1,4 +1,5 @@
 const BaseController = require('koa-symphony/src/controller/BaseController');
+
 const Pagination = require('../toolkit/Pagination');
 
 class MyController extends BaseController {
@@ -16,7 +17,9 @@ class MyController extends BaseController {
       }
 
       let articles = await this.articleService().findArticlesByUserId(user.get('id'), (ctx.request.query.page - 1) * Pagination.pageCount, Pagination.pageCount);
-      let pagination = new Pagination(ctx.request, count);
+      let query = ctx.request.query;
+
+      let pagination = new Pagination(query, 'myArticles', count);
 
       return ctx.render('article/my-articles.twig', {
         articles: articles,

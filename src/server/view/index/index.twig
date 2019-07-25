@@ -1,5 +1,6 @@
 {% extends 'layout.twig' %}
-{% set scripts = ['/dist/js/index/index.js'] %}
+{{ scripts(scriptList, {10: ['/dist/js/index/index.js']}) }}
+
 {% set styles = ['/dist/css/index.css'] %} 
 
 {% block main %}

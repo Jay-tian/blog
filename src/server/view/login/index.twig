@@ -1,7 +1,8 @@
 {% extends 'layout.twig' %}
 
 {% set title = "登录" %}
-{% set scripts = ['/dist/js/libs/jquery-validation.js', '/dist/js/login/index.js',] %} 
+{{ scripts(scriptList, {10: ['/dist/js/libs/jquery-validation.js', '/dist/js/login/index.js']}) }}
+
 {% set styles = ['/dist/css/login.css'] %} 
 
 {% block body %}

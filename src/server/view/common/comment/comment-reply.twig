@@ -1,0 +1,8 @@
+<div class="replay-target">
+  {% include 'root::common/comment/comment-user.twig' with {nickname: replyUser.nickname, comment: reply} %}
+  <pre>{{ reply.content }}</pre>
+  <p class="comment-ops">
+    {# <a class="" href="javascript:;">点赞</a> #}
+    {# <a class="grey btn js-reply-btn"  data-id="{{ reply.id }}" data-floor="{{  }}" href="javascript:;">回复</a> #}
+  </p>
+</div>

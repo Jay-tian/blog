@@ -1,15 +1,15 @@
 {% extends 'layout.twig' %}
 {% set title =  '我的文章' %}
 {% set styles = ['/dist/css/my.css'] %}
-{% set scripts = ['/dist/js/article/my/index.js'] %} 
+{{ scripts(scriptList, {0: ['/dist/js/article/my/index.js']}) }}
+
 {% block main %}
-  
   <div class="my-article main container">
     <ul class="article-list">
       {% for article in articles %}
         <li id="article-{{article.id}}" class="clearfix">
           <a href="{{url('showArticle', {id: article.id})}}">
-          {{ article.title }}
+            {{ article.title }}
           </a>
           <a class="pull-right manage btn btn-primary" href="{{ url('updateArticle', {id: article.id}) }}">
             编辑

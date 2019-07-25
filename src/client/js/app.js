@@ -14,3 +14,16 @@ $('.js-delete').on('click', function() {
     });
   }
 });
+
+
+$('body').on('click', '.js-page-nav a', function(){
+  let $a = $(this);
+  let $elm = $a.closest('.js-page-nav');
+  if ($elm.data('async')) {
+    $.get($a.attr('href'), function(res){
+      $($elm.data('box')).html(res)[0].scrollIntoView();
+    });
+
+    return false;
+  }
+});
