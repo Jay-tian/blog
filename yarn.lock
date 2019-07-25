@@ -6675,10 +6675,10 @@ jay-respond@^1.4.3:
   resolved "https://registry.yarnpkg.com/jay-respond/-/jay-respond-1.4.3.tgz#b2052b3d391dc90f0c50a6ad7fbb4a87a0fe8a3d"
   integrity sha512-8eYoF9m5pnAw2fMNq1ev8TfYzHJWXtbz3ZM39ZAFxJwH6BYkhNvWRmo+ZkN3KieKby9A4SB6i5q7RW0ERvQq5w==
 
-jay-webpack-scaffold@^1.1.20:
-  version "1.1.20"
-  resolved "https://registry.yarnpkg.com/jay-webpack-scaffold/-/jay-webpack-scaffold-1.1.20.tgz#c43b7eac4754b44c8c4f31f44271bac2c7a302b9"
-  integrity sha512-57VOoAhCz4RTpEuOrQwZIVXL9QrHorjUY4ohTsKIjqFCciqO+D5osbA9T4YHl1aI3xbPMPU4ws+GAxbGIdtrNA==
+jay-webpack-scaffold@^1.1.21:
+  version "1.1.21"
+  resolved "https://registry.yarnpkg.com/jay-webpack-scaffold/-/jay-webpack-scaffold-1.1.21.tgz#7c0cd7560cf545a2c5b3f3ec05f3273182a936c8"
+  integrity sha512-n8B4L8jjOfREuh+Xl2Gpwb/1KSBHvZHHK7P5AxZJ+PSJivw/Hx2SzO6BJFiheChtHDxfpXMPCK24Xb5MwViOWA==
   dependencies:
     autoprefixer "^7.2.5"
     babel-cli "^6.26.0"
@@ -9043,7 +9043,7 @@ pinkie@^2.0.0:
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
   integrity sha1-clVrgM+g1IqXToDnckjoDtT3+HA=
 
-pinyin@^2.8.3:
+pinyin@^2.9.0:
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/pinyin/-/pinyin-2.9.0.tgz#1e77025bf4fafdad4ea410022837b5f97e53aab1"
   integrity sha512-TZYQ+2uE12arC1EfCeDmN5KgwIOuNMIweOotKvBZdhVOUuQc5RJsGEGf+BaSvxfVtu9ViYEFJmH0xTaj9t4n3Q==
