@@ -3,7 +3,7 @@
     <ul class="pagination">
       {% if pagination.getPrePage > 0 %}
         <li>
-          <a href="#" aria-label="Previous">
+          <a href="{{ pagination.getUrl(pagination.getPrePage) }}"  aria-label="Previous">
             <span aria-hidden="true">&laquo;</span>
           </a>
         </li>

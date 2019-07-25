@@ -14,29 +14,18 @@ $('body').on('click', '.js-reply-btn', function(){
   $('#replyId').val(id);
   location.href = '#comments-action'; 
 });
-// $('#register').validate({
-//   rules: {
-//     nickname: {
-//       required: true,
-//       remote: {},
-//     },
-//     password: {
-//       required: true,
-//     },
-//     email: {
-//       required: true,
-//       email: true,
-//       remote: {},
-//     }
-//   },
-//   messages: {
-//     nickname: {
-//       remote: '昵称已占用！'
-//     },
-//     email: {
-//       remote: '邮箱已占用！'
-//     }
-//   }
-// });
+
+$('#comment-form').validate({
+  rules: {
+    content: {
+      required: true,
+    },
+  },
+  messages: {
+    content: {
+      required: '评论不能唯恐'
+    }
+  }
+});
 
 

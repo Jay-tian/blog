@@ -34,7 +34,7 @@ class Pagination {
   }
 
   getCurrentPage() {
-    return this.query.page ? this.query.page : 1;
+    return this.query.page ? parseInt(this.query.page) : 1;
   }
 
   getNextPage() {

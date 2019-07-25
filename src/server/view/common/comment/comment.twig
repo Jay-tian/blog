@@ -1,11 +1,11 @@
-{{ scripts(scriptList, {10: ['/dist/js/comment/submit/index.js']}) }}
+{{ scripts(scriptList, {10: ['/dist/js/libs/jquery-validation.js', '/dist/js/comment/submit/index.js']}) }}
 
 <div id="comments-action" class="comments-action clearfix">
   <div class="comments-box-content">
     <p class="reply-target mb1 hide"> 
       @<span class="reply-target-content">1楼</span> <span class="js-delete-reply iconfont icon-close-circle"></span>
     </p>
-    <form action="{{ url('createComment', {targetId: article.id, targetType: 'article'}) }}" method="POST">
+    <form id="comment-form" action="{{ url('createComment', {targetId: article.id, targetType: 'article'}) }}" method="POST">
       <textarea name="content" rows="3" class="form-control" placeholder="文明社会，理性评论"></textarea>
       <div>
         <button class="js-comment-btn btn btn-primary pull-right mt2" type="submit">评论</button>
@@ -16,5 +16,6 @@
     </form>
   </div>
 </div>
-
-{% include 'root::common/comment/comment-item.twig' with {targetId: targetId, targetType: targetType} %}
+<div class="comment-list">
+  {% include 'root::common/comment/comment-item.twig' with {targetId: targetId, targetType: targetType} %}
+</div>
