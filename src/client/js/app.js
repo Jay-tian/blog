@@ -27,3 +27,14 @@ $('body').on('click', '.js-page-nav a', function(){
     return false;
   }
 });
+
+$('body').on('click', '.js-delete-html', function(){
+  let target = $(this).data('target');
+  let isStrict = $(this).data('isStrict');
+
+  if (isStrict) {
+    $(target).remove();
+  } else {
+    $(target).html('');
+  }
+});

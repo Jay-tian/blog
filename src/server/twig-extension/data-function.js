@@ -6,11 +6,11 @@ const createService = function(name) {
 };
 
 module.exports = {
-    findComments: async function(targetId, targetType, startPage = 1, replyId = 0, limit = 20) {
+    findComments: async function(targetId, targetType, startPage = 1, limit = 20) {
         let commentService = createService('comment/CommentService');
         let userService = createService('user/UserService');
         let comments = await commentService.search(
-            {targetId: targetId, targetType: targetType, replyId: replyId },
+            {targetId: targetId, targetType: targetType, replyId: 0 },
             [['createdAt', 'DESC']],
             (startPage - 1) * limit,
             limit
@@ -30,5 +30,30 @@ module.exports = {
         return await commentService.count(
             {targetId: targetId, targetType: targetType},
         );
-    }
+    },
+    findReplyComments: async function(replyId, startPage = 1, limit = 20) {
+        let commentService = createService('comment/CommentService');
+        let userService = createService('user/UserService');
+        let comments = await commentService.search(
+            {replyId: replyId},
+            [['createdAt', 'DESC']],
+            (startPage - 1) * limit,
+            limit
+        );
+
+        let userIds = toolkit.arrayColumn(comments, 'userId');
+        let users = await userService.findByIds(userIds);
+        users = mytoolkit.index(users, 'id');
+
+        return {
+            comments: comments,
+            users: users,
+        }
+    },
+    countReplyComments: async function(replyId) {
+        let commentService = createService('comment/CommentService');
+        return await commentService.count(
+            {replyId: replyId}
+        );
+    } 
 };

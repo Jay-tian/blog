@@ -9,10 +9,18 @@ $('.js-delete-reply').on('click', function(){
 });
 
 $('body').on('click', '.js-reply-btn', function(){
+  let floor = $(this).data('floor');
   let id = $(this).data('id');
-  $('.reply-target').removeClass('hide').find('.reply-target-content').text(id+'楼');
+  $('.reply-target').removeClass('hide').find('.reply-target-content').text(floor+'楼');
   $('#replyId').val(id);
   location.href = '#comments-action'; 
+});
+
+$('body').on('click', '.js-reply-all', function(){
+  let $box = $(this).closest('.comments-item').find('.reply-box');
+  $.get($(this).data('url'), function(res){
+    $box.html(res);
+  });
 });
 
 $('#comment-form').validate({

@@ -107,5 +107,9 @@
   "commentList": {
     "path": "/comment/list",
     "controller": "Comment"
+  },
+  "commentReplyList": {
+    "path": "/comment/reply/:replyId/list",
+    "controller": "Comment"
   }
 }
