@@ -5,7 +5,7 @@ let paginationCount = 20;
 class Pagination {
   constructor(query, pathName, allCount, pageCount = paginationCount) {
     this.query = query;
-    this.path = webToolkit.urlGenerater(pathName);
+    this.path = webToolkit.urlGenerater(pathName, query);
     this.allCount = allCount;
     this.pageCount = pageCount;
     this.querystring = require('querystring');

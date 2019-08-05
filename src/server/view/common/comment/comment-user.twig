@@ -5,6 +5,6 @@
     </a>
   </strong>
   <span class="comment-time">
-    · {{ comment.createdAt|timeDate2str }} · {{ comment.floor }}楼
+    · {{ comment.createdAt|timeDate2str }} · {% if comment.replyFloor %} {{comment.replyFloor}}层 {% else %} {{ comment.floor }}楼 {% endif %}
   </span>
 </div>

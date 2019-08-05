@@ -17,7 +17,12 @@ $('body').on('click', '.js-reply-btn', function(){
 });
 
 $('body').on('click', '.js-reply-all', function(){
+
   let $box = $(this).closest('.comments-item').find('.reply-box');
+  if ($.trim($box.text())) {
+    $box.show();
+    return;
+  }
   $.get($(this).data('url'), function(res){
     $box.html(res);
   });
@@ -31,7 +36,7 @@ $('#comment-form').validate({
   },
   messages: {
     content: {
-      required: '评论不能唯恐'
+      required: '评论不能为空'
     }
   }
 });

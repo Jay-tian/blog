@@ -35,6 +35,6 @@ $('body').on('click', '.js-delete-html', function(){
   if (isStrict) {
     $(target).remove();
   } else {
-    $(target).html('');
+    $(target).hide();
   }
 });

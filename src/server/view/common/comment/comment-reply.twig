@@ -6,6 +6,9 @@
   {% include 'root::common/comment/comment-reply-item.twig' with {commentUser: commentUser, comment: comment} %}
 {% endfor %}
 
+{% set pagination = pagination({targetId: replyId, targetType: 'article', page: page, replyId: replyId}, 'commentReplyList', commentCount) %}
+{% include 'root::common/system/pagination.twig' with {pagination: pagination, async: true, box: "#comment-item-" } %}
+
 {% if not commentData.comments %}
   <div class="replay-target">
     无回复
