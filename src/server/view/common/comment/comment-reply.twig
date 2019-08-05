@@ -7,7 +7,8 @@
 {% endfor %}
 
 {% set pagination = pagination({targetId: replyId, targetType: 'article', page: page, replyId: replyId}, 'commentReplyList', commentCount) %}
-{% include 'root::common/system/pagination.twig' with {pagination: pagination, async: true, box: "#comment-item-" } %}
+{% set box = '#comment-item-' ~ replyId %}
+{% include 'root::common/system/pagination.twig' with {pagination: pagination, async: true, box: box } %}
 
 {% if not commentData.comments %}
   <div class="replay-target">

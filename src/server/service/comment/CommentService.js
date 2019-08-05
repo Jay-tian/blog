@@ -9,7 +9,7 @@ class CommentService extends BaseService {
     if (fields['replyId'] != 0) {
       let reply = await this.getCurrentDao().getById(fields.replyId);
       let lastReplyFloor = await this.getCurrentDao().getLastReplyFloor(fields.targetId, fields.targetType, fields.replyId);
-      fields['replyFloor'] = lastReplyFloor.length ? lastReplyFloor['replyFloor'] : 1;
+      fields['replyFloor'] = lastReplyFloor.length ? lastReplyFloor[0]['replyFloor'] + 1 : 1;
       fields['floor'] = reply.get('floor');
     } else {
       let lastFloor = await this.getCurrentDao().getLastFloor(fields.targetId, fields.targetType);
