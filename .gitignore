@@ -8,3 +8,4 @@ public/.DS_Store
 config/*
 config/db.json
 nodemon.json
+/log/*
