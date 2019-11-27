@@ -89,6 +89,11 @@
     "controller": "App",
     "methods": ["post"]
   },
+  "qr": {
+    "path": "/qr",
+    "controller": "App",
+    "methods": ["get"]
+  },
   "test": {
     "path": "/test",
     "controller": "Test",

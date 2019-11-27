@@ -2,6 +2,7 @@ const BaseController = require('koa-symphony/src/controller/BaseController');
 const fs = require('fs');
 const os = require('os');
 const path = require('path');
+const qr = require('qr-image');
 
 class AppController extends BaseController {
   constructor(){
@@ -22,6 +23,16 @@ class AppController extends BaseController {
       return ctx.render(`app/${code}.twig`, {
       });
     };    
+  }
+
+  qr() {
+    return async (ctx) => {
+      var code = qr.image("https://www.tianshengjie.cn", {type: 'png'});
+      ctx.set('Content-Type', 'image/png');
+      ctx.body = code;
+
+      return;
+    }; 
   }
 
   donwLoadCctJson() {
