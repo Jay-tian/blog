@@ -2704,6 +2704,11 @@ cli@~1.0.0:
     exit "0.1.2"
     glob "^7.1.1"
 
+clipboard.js@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/clipboard.js/-/clipboard.js-1.0.1.tgz#4ef05f61d90a5ecd406c41846288f1a89c4e74d6"
+  integrity sha1-TvBfYdkKXs1AbEGEYojxqJxOdNY=
+
 cliui@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/cliui/-/cliui-3.2.0.tgz#120601537a916d29940f934da3b48d585a39213d"
@@ -10647,10 +10652,10 @@ sequelize@^4.37.6:
     validator "^10.4.0"
     wkx "^0.4.1"
 
-sequelize@^5.8.9:
-  version "5.10.2"
-  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-5.10.2.tgz#60146fcc40e6306c21867400276f7fe4fbb2855b"
-  integrity sha512-A7QTOuT/tqPChkT6TW7ujHO0hbngctBIHU9BoGuFkzMN7cMkzkxpGJdztOl3rxe9EQnQFRbUOHbvUvPBZI4CPA==
+sequelize@^5.15.1:
+  version "5.15.1"
+  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-5.15.1.tgz#f130ded17e74395ae7f5e265277c99577e895afb"
+  integrity sha512-DCzzJYvJLMKnyf8G3at2A+yM9M2fSQmTmuOYIpCWM8Gjqx3XfgNTd1NkuyPWFoi1/d1AXQsN2VDPXkPczida8A==
   dependencies:
     bluebird "^3.5.0"
     cls-bluebird "^2.1.0"
