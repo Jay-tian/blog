@@ -1,0 +1,43 @@
+{% extends 'layout.twig' %}
+{% set bodyClass = 'fullscreen' %}
+{% set title = '字符串转成Sql的in条件 无境-jay 博客' %}
+{% set description = '字符串转成Sql的in条件' %}
+{% set keywords = 'sql，in条件，excel' %}
+{{ scripts(scriptList, {0: ['/dist/js/strtosqlIn/index.js']}) }}
+{% block style %}
+    <style>
+    .ctSqlIn {
+        width: 300px;
+        margin: 50px auto;
+        display: block;
+        height: 100px;
+        border: 1px solid #f1f1f1;
+        padding: 2px;
+    }
+    .result{
+        height: 30px;
+        width: 300px;
+        margin: 0 auto;
+    }
+    .output {
+        border: 1px solid #999;
+        height: 30px;
+        width: 300px;
+    }
+    </style>
+
+{% endblock %}
+{% block main %}
+  <div class="">
+    <div class="clearfix">
+      <textarea class="ctSqlIn" id='input' placeholder="在此输入字符串"></textarea>
+    </div>
+    <div class="result">
+        <input id="output" class="output">
+        <div class="mt2">
+            <span>计数: <i id="count">0</i></span>
+            <bottom  id="copy" data-clipboard-target="#output" class="ml2 btn btn-success">快速复制</bottom>
+        </div>
+    </div>
+  </div>
+{% endblock %}

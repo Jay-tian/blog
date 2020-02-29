@@ -16,6 +16,8 @@
   {% for style in styles|default('') %}
     <link href="{{ asset(style) }}" rel="stylesheet">
   {% endfor %}
+   {% block style %}
+   {% endblock %}
   <link rel="icon" href="{{asset('/image/favicon.ico')}}" type="image/x-icon"/>
   <link rel="shortcut icon" href="{{asset('/image/favicon.ico')}}" type="image/x-icon" media="screen"/>
 </head>
@@ -54,5 +56,7 @@
       s.parentNode.insertBefore(hm, s);
     })();
   </script>
+  {% block endbody %}
+  {% endblock %}
 </body>
 </html>
