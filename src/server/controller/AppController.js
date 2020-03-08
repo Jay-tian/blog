@@ -3,6 +3,7 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 const qr = require('qr-image');
+const gm = require('gm')
 
 class AppController extends BaseController {
   constructor(){
@@ -27,7 +28,8 @@ class AppController extends BaseController {
 
   qr() {
     return async (ctx) => {
-      var code = qr.image("https://www.tianshengjie.cn", {type: 'png'});
+      let text = ctx.request.query.text;
+      var code = qr.image(text, {type: 'png', margin: 0, size: 6});
       ctx.set('Content-Type', 'image/png');
       ctx.body = code;
 

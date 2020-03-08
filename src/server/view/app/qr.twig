@@ -1,11 +1,49 @@
 {% extends 'layout.twig' %}
 {% set bodyClass = 'fullscreen' %}
 {% set title = 'JSON在线解析 无境-jay 博客' %}
-{% set description = 'json,json在线解析,json格式化,json格式验证' %}
-{% set keywords = 'json,json在线解析,json格式化,json验证' %}
-{{ scripts(scriptList, {0: ['/dist/js/libs/jsonlint/lib/jsonlint.js', '/dist/js/json-decode/index.js']}) }}
-{% set styles = ['/dist/css/json-decode.css'] %} 
+{% set description = '二维码' %}
+{% set keywords = '二维码生成' %}
+{{ scripts(scriptList, {0: []}) }}
 
+{% block style %}
+    <style>
+    .ctSqlIn {
+        width: 80%;
+        float: right;
+        margin: 50px auto;
+        display: block;
+        height: 60px;
+        border: 1px solid #f1f1f1;
+        padding: 2px 5px;
+    }
+    .result{
+        height: 30px;
+        width: 300px;
+        margin: 0 auto;
+    }
+    </style>
+
+{% endblock %}
 {% block main %}
-    
+  <div class="row">
+    <div class="container">
+        <div class="clearfix col-md-8">
+        <input class="ctSqlIn" id='input'  value="https://tianshengjie.cn" placeholder="在此输入网址">
+        </div>
+        <div class="result col-md-4">
+            <img id="image" src="/qr?text=https://tianshengjie.cn" data-url="{{ url('qr')}}"/>
+            <br/>
+            <button class="js-submit btn mt2 btn-success">生成</button>
+        </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block endbody %}
+    <script>
+        $('.js-submit').on('click', function(){
+            var $image = $('#image');
+            $image.prop('src', ($image.data('url')+'?text='+$('#input').val())) ;
+        })
+    </script>
 {% endblock %}
