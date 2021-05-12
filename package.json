@@ -24,7 +24,7 @@
     "jsonlint": "^1.6.3",
     "particles.js": "^2.0.0",
     "pinyin": "^2.9.0",
-    "swiper": "^4.4.1",
+    "swiper": "^6.5.1",
     "tsj-jcrop": "1.0.2",
     "web-fingerprint": "^1.0.2",
     "webpack-cli": "^3.1.0",
